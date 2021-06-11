@@ -1,0 +1,57 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="datospax_form">
+      <field name="name">paxdata_form</field>
+      <field name="model">pax.data</field>
+      <field name="arch" type="xml">
+        <form>
+        <group>
+          <field name="apellidos_pax"/>
+          <field name="nombres_pax"/> 
+          <field name="dni"/>
+          <field name="pasaporte"/>
+          <field name="vto_pass"/>
+        </group>
+        </form>
+      </field>
+    </record>
+
+  <record model="ir.ui.view" id="datospax_list">
+      <field name="name">paxdata_list</field>
+      <field name="model">pax.data</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="apellidos_pax"/>
+          <field name="nombres_pax"/> 
+          <field name="dni"/>
+          <field name="pasaporte"/>
+          <field name="vto_pass"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="datospax_action_window">
+      <field name="name">pax.data window</field>
+      <field name="res_model">pax.data</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="paxdata" id="paxdata_menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="paxdata_doc" id="paxdata_document" parent="paxdata_menu_root" 
+    action="datospax_action_window"/>
+
+
+
+  </data>
+</odoo>
