@@ -7,12 +7,36 @@
       <field name="model">pax.data</field>
       <field name="arch" type="xml">
         <form>
-        <group>
-          <field name="apellidos_pax"/>
-          <field name="nombres_pax"/> 
-          <field name="dni"/>
-          <field name="pasaporte"/>
-          <field name="vto_pass"/>
+        <group name="top">
+          <group name="first">
+            <field name="apellidos_pax" widget="char" placeholder="Evitar Acentos y eñes" />
+            <field name="nombres_pax" widget="char" placeholder="Evitar Acentos y eñes" /> 
+            <field name="fecha_nacimiento"/>
+            <field name="dni"/>
+            <field name="pasaporte"/>
+            <field name="vto_pass"/>
+            <field name="vto_visa_usa"/>
+            <field name="nota" widget="Char" 
+              placeholder="Eg: No fumador, celíaco, no ofrecer viajes a paises  comunistas, etc." />
+          </group>
+
+          <group name="second">
+            <field name="imagen_dni" widget="image" options='{"size": [200, 200]}' />
+          </group>
+
+          <group name="third">
+            <field name="imagen_pass" widget="image" options='{"size": [200, 200]}' />
+          </group>
+
+          <group name="fourth">
+            <field name="imagen_visa_usa" widget="image" options='{"size": [200,200]}' />
+          </group>
+
+           <notebook>
+              <page string="Contacto" name="Familiares que viajan con este pasajero" >
+                <field name="pasajero" widget="many2many_tags" string="familiares" />
+            </page>
+            </notebook> 
         </group>
         </form>
       </field>
@@ -25,33 +49,56 @@
         <tree>
           <field name="apellidos_pax"/>
           <field name="nombres_pax"/> 
+          <field name="fecha_nacimiento"/>
           <field name="dni"/>
           <field name="pasaporte"/>
           <field name="vto_pass"/>
+          <field name="vto_visa_usa"/>
         </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="datospax_filter">
+      <field name="name">paxdata_filter</field>
+      <field name="model">pax.data</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="apellidos_pax" />
+          <field name="nombres_pax" />
+        </search>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="datospax_calendar_pass">
+      <field name="model">pax.data</field>
+      <field name="arch" type="xml">
+        <calendar string="Vencimiento Pasaportes" 
+          date_start="vto_pass" color="apellidos_pax"
+          mode="month">
+            <field name="apellidos_pax" />
+            <field name="nombres_pax" />
+        </calendar>
       </field>
     </record>
 
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="datospax_action_window">
-      <field name="name">pax.data window</field>
+      <field name="name">Passanger Data</field>
       <field name="res_model">pax.data</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,form,calendar</field>
     </record>
 
-
+   
 
     <!-- Top menu item -->
 
-    <menuitem name="paxdata" id="paxdata_menu_root"/>
-
+    <menuitem name="Passanger" id="paxdata_menu_root"/>
+ 
     <!-- menu categories -->
 
-    <menuitem name="paxdata_doc" id="paxdata_document" parent="paxdata_menu_root" 
+    <menuitem name="Documentation" id="paxdata_document" parent="paxdata_menu_root" 
     action="datospax_action_window"/>
-
-
-
+   
   </data>
 </odoo>
