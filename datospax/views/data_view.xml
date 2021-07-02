@@ -16,24 +16,24 @@
             <field name="passport"/>
             <field name="pass_tl"/>
             <field name="visa_us_tl"/>
-            <field name="ff1" widget="char" placeholder="Frequent Flyer" />
-            <field name="ff2" widget="char" placeholder="Frequent Flyer" />
+            <field name="ff1" widget="char" placeholder="Frequent Flyer AR383838382" />
+            <field name="ff2" widget="char" placeholder="Frequent Flyer LA383838383" />
             <field name="private_email" widget="email" />
-            <field name="private_cel_phone" widget="phone"/>
-            <field name="nota" widget="Char" 
-              placeholder="Eg: No fumador, celíaco, no ofrecer viajes a paises  comunistas, etc." />
+            <field name="private_cel_phone" widget="phone" placeholder="Without area code 351307064"/>
+            <field name="note" widget="Char" 
+              placeholder="Servicios Especiales Eg. VGML" />
           </group>
 
           <group name="second">
-            <field name="imagen_dni" widget="image" options='{"size": [200, 200]}' />
+            <field name="doc_image" widget="image" options='{"size": [200, 200]}' />
           </group>
 
           <group name="third">
-            <field name="imagen_pass" widget="image" options='{"size": [200, 200]}' />
+            <field name="passanger_image" widget="image" options='{"size": [200, 200]}' />
           </group>
 
           <group name="fourth">
-            <field name="imagen_visa_usa" widget="image" options='{"size": [200,200]}' />
+            <field name="visa_us_image" widget="image" options='{"size": [200,200]}' />
           </group>
 
            <notebook>
