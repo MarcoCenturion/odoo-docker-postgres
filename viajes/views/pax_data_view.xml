@@ -1,0 +1,28 @@
+<odoo>
+<!--
+<record id="view_tree_pax" model="ir.ui.view"> 
+  <field name="name">Paxtree</field> 
+  <field name="model">pax.data</field> 
+  <field name="arch" type="xml"> 
+      <field name="apellidos_pax"/>
+      <field name="nombres_pax"/> 
+      <field name="dni"/>
+      <field name="pasaporte"/>
+  </field> 
+</record>
+
+<act_window id="action_pax_data" 
+    name="Pax Data"
+    res_model="pax.data"
+    view_mode="tree,form"
+/>
+<menuitem id="menu_pasajeros" name="pasajeros" />
+
+<menuitem id="menu_pax_data"
+    name="Datos"
+    parent="menu_pasajeros"
+    action="action_pax_data"
+/>
+
+-->
+</odoo>
