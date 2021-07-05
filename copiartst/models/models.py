@@ -41,14 +41,18 @@ class Copiatst(models.Model):
 	@api.depends('tst_amadeus')
 	def _ltd(self):
 		if self.tst_amadeus:
-			self.ltd=re.findall('DTE \d{2}\D{3}\d{2}', self.tst_amadeus)[0]
+			self.ltd=re.findall('(DTE \d{2}\D{3}\d{2}/\d{2}:\d{2}|DTE \d{2}\D{3}\d{2})'
+				, self.tst_amadeus)[0]
 
 	@api.depends('tst_amadeus')
 	def _bagage(self):
 		if self.tst_amadeus:
 			self.bagage=re.findall('(0P|20|30|32|2B|PC|1P)\n', self.tst_amadeus)
 
-
+	@api.depends('tst_amadeus')
+	def _cia(self):
+		if self.tst_amadeus:
+			self.cia=re.findall('CARRIER \D{2}', self.tst_amadeus)
 		
 	tst_amadeus = fields.Text('Copia del tst')
 	route = fields.Char('Ruta', compute='_route', store=True)
@@ -59,6 +63,7 @@ class Copiatst(models.Model):
 	retenc = fields.Char('Retencion AFIP 35%', compute='_retenc', store=True)
 	ltd = fields.Char('Ultimo día para emitir', compute=_ltd, store=True)
 	bagage = fields.Char('Equipaje despachado', compute='_bagage', store=True)
+	cia = fields.Char('Cía Aérea', compute='_cia', store=True)
 
 
 def _copytst(self):

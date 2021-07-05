@@ -12,6 +12,7 @@
             <button type="object" name="_newtst" string="Agregar otro TST" />
           </header>
         <field name="tst_amadeus"/>
+        <field name="cia"/>      
         <field name="route"/>      
         <field name="date"/>
         <field name="bagage"/>
@@ -30,6 +31,7 @@
       <field name="model">copia.tst</field>
       <field name="arch" type="xml">
         <tree>
+        <field name="cia"/>      
         <field name="route"/>
         <field name="date"/>
         <field name="bagage"/>
