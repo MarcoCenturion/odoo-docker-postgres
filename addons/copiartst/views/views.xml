@@ -26,6 +26,26 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="view_sale_order_buttons">
+      <field name="name">sale.order.inherit</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form"/>
+      <field name="arch" type="xml">
+<!--
+      <xpath expr = "//field[@name='sale_order_line']" position = "after" >
+         <field name="tst_amadeus"/> 
+
+      </xpath>
+-->
+        <form>
+          <header>
+            <button type="object" name="_copytst" string="Copiar TST ARS" class="oe_highlight" />
+          </header>
+        </form>
+      </field>
+    </record>
+
+
   <record model="ir.ui.view" id="copiartst_list">
       <field name="name">copiartst_list</field>
       <field name="model">copia.tst</field>
@@ -69,8 +89,5 @@
 
     <menuitem name="Parsear TST" id="tstmaker_document" parent="tstmaker_menu_root" 
     action="tstmaker_action_window"/>
-    <menuitem name="Parsear TST" id="tstmaker_document" parent="tstmaker_menu_root" 
-    action="tstmaker_action_window"/>
-
   </data>
 </odoo>

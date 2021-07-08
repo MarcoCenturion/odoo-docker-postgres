@@ -20,16 +20,18 @@
     'version': '1.0',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','sale','sale_management'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'security/copiartst_security.xml',
         'views/views.xml',
         'views/templates.xml',
+        #'view_line.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo/demo.xml',
+       'demo/demo.xml',
     ],
 }
