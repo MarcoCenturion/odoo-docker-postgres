@@ -4,6 +4,7 @@ import re
 from odoo import models, fields, api
 
 class Copiatst(models.Model):
+	#_inherit = 'sale.order'
 	_name = 'copia.tst'
 	_description = 'Captura los datos del TST'
 	
@@ -31,7 +32,7 @@ class Copiatst(models.Model):
 	@api.depends('tst_amadeus')
 	def _date(self):
 		if self.tst_amadeus:
-			self.date=re.findall(r'(?:[ |*][A-Z]{1}.)((?:\d{2}\D{3} ))', self.tst_amadeus)
+			self.date=re.findall(r'(?:[ |*][A-Z]{1}.)((?:\d{2}\D{3} ))', self.tst_amadeus)[0]
 
 	@api.depends('tst_amadeus')
 	def _retenc(self):
@@ -51,7 +52,7 @@ class Copiatst(models.Model):
 	@api.depends('tst_amadeus')
 	def _cia(self):
 		if self.tst_amadeus:
-			self.cia=re.findall('CARRIER (..)', self.tst_amadeus)[0]
+			self.cia=re.findall('BG CXR: (..) ', self.tst_amadeus)[0]
 
 	@api.depends('tst_amadeus')
 	def _rate(self):
@@ -70,21 +71,15 @@ class Copiatst(models.Model):
 	bagage = fields.Char('Equipaje despachado', compute='_bagage', store=True)
 	cia = fields.Char('Cía Aérea', compute='_cia', store=True)
 	rate= fields.Float('Tipo de Cambio USD', compute='_rate', store=True)
-	line_air = fields.Many2many('sale.order','order_line', 'Agregar Vuelos')
-
+	line_air = fields.Many2many('sale.order')
 
 
 class SaleOrderInherit(models.Model):
-	_inherit = 'sale.order'
-	def _copytst(self):
+	_inherit = 'sale.order.line'
+
+	def _tstusd(self):
 		pass
 
-	def _pastetst(self):
+	def _tstars(self):
 		pass
-
-	def _newtst(self):
-		pass
-
-
-
 	
