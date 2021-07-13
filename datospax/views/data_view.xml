@@ -11,17 +11,17 @@
           <group name="first">
             <field name="surname" widget="char" placeholder="Evitar Acentos y eñes" />
             <field name="name" widget="char" placeholder="Evitar Acentos y eñes" /> 
-            <field name="dob"/>
+            <field name="dob" widget="date"/>
             <field name="document"/>
-            <field name="passport"/>
-            <field name="pass_tl"/>
-            <field name="visa_us_tl"/>
+            <field name="passport" widget="char" placeholder="Not -/·,."/>
+            <field name="pass_tl" widget="date"/>
+            <field name="visa_us_tl" widget="date"/>
             <field name="ff1" widget="char" placeholder="Frequent Flyer AR383838382" />
             <field name="ff2" widget="char" placeholder="Frequent Flyer LA383838383" />
             <field name="private_email" widget="email" />
-            <field name="private_cel_phone" widget="phone" placeholder="Without area code 351307064"/>
+            <field name="private_cel_phone" widget="phone" placeholder="Eg. 351307064"/>
             <field name="note" widget="Char" 
-              placeholder="Servicios Especiales Eg. VGML" />
+              placeholder="Servicios Especiales Eg. VGML separados por , comas" />
           </group>
 
           <group name="second">

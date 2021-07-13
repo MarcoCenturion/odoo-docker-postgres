@@ -37,7 +37,7 @@ class Copiatst(models.Model):
 	@api.depends('tst_amadeus')
 	def _retenc(self):
 		if self.tst_amadeus:
-			self.retenc=re.findall('ARS (\D{0,3}\d{1,6}.\d{2})-Q1', self.tst_amadeus)[0]
+			self.retenc=re.findall('ARS (\D{0,3}\d{1,6}.\d{2})(-Q1|Q1)', self.tst_amadeus)[0][0]
 
 	@api.depends('tst_amadeus')
 	def _ltd(self):
@@ -52,7 +52,7 @@ class Copiatst(models.Model):
 	@api.depends('tst_amadeus')
 	def _cia(self):
 		if self.tst_amadeus:
-			self.cia=re.findall('BG CXR: (..) ', self.tst_amadeus)[0]
+			self.cia=re.findall('BG CXR: (..)', self.tst_amadeus)[0]
 
 	@api.depends('tst_amadeus')
 	def _rate(self):
@@ -78,6 +78,7 @@ class SaleOrderInherit(models.Model):
 	_inherit = 'sale.order.line'
 
 	def _tstusd(self):
+		
 		pass
 
 	def _tstars(self):
