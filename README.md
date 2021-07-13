@@ -40,3 +40,33 @@ docker image ls
 ## Ver los contenedores corriendo
 
 docker stats
+
+## Modulo DatosPax
+- Captura datos del pasajero.
+- Automatiza tareas repetitivas.
+- Evita errores de tipeo.
+- Genera un Renglón para pegar en amadeus con los campos para el PNR.
+- Alertas de Vencimientos de pasaporte o Visas.
+- Genera campo SR DOCS al pnr
+- Genera RM con datos para el backoffice y automatizar la facturación
+
+## Módulo CopiarTst
+- Copia el texto plano de un TST
+- Recorta los Datos con REGEX
+    + Cía. 
+    + Tarifa ARS
+    + Tarifa USD
+    + LTD (fecha y hora)
+    + Tipo de cambio
+    + Ruta 
+    + Fecha
+    + Franqujicia de equipaje
+    + Resaltar retención AFIP
+- Arma cotización con varios TST
+- Quedan todos los parámetros guardados por defecto con un trazado de usuario / hora.
+
+## Nice to Have
+Escribir una función que tome de Odoo la ruta / Fecha / Cía para pegar un renglón en Amadeus y cotizar.
+
+
+
