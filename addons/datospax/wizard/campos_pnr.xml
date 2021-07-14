@@ -9,7 +9,7 @@
 						Generar un renglón para copiar y pegar en amadeus
 					</p>
 					<group>
-						<field name="row_1a"/>
+						<field name="buscar"/>
 					</group>
 					<separator string="Pasajeros " />
 						<field name="paxs"/>
@@ -30,6 +30,7 @@
 
 		<record id="action_view_pax_export_amadeus" model="ir.actions.act_window">
 			<field name="name">Exportar</field>	
+<!--			<field name="type">ir.action.act_window</field> -->
 			<field name="res_model">datospax.pnr.wizard</field>
 			<field name="view_mode">form</field>
 			<field name="target">new</field>

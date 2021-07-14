@@ -12,13 +12,13 @@ el objetivo es levantar en producción en poco tiempo un backup
 
 **Arrancar los contenedores**
 Correr esto en el mismo directorio donde está el archivo docker-compose.yml
-docker-compose up -u
+docker-compose up -d (para que corra en segundo plano)
 
 **Detener los contenedores**
 docker-compose down 
 
 **Restart**
-docker 
+docker-compose restart
 
 ## Restorear la base
 
@@ -28,27 +28,22 @@ Crear un usuario odoo con permisos para postgres en el container
 ## Entrar a la linea de comandos del contenedor
 
 **docker exec -it u roo odoo-db-data bash** 
-
 o 
-
 **docker exec -it u roo odoo-web-data bash** 
 
 ## Listar las imágenes
-
 docker image ls
 
 ## Ver los contenedores corriendo
-
 docker stats
 
-## Modulo DatosPax
+# Modulo DatosPax
 - Captura datos del pasajero.
 - Automatiza tareas repetitivas.
 - Evita errores de tipeo.
-- Genera un Renglón para pegar en amadeus con los campos para el PNR.
-- Alertas de Vencimientos de pasaporte o Visas.
-- Genera campo SR DOCS al pnr
-- Genera RM con datos para el backoffice y automatizar la facturación
+- Genera un Renglón para pegar en Amadeus con los campos para el PNR con los campos NM, AP, TK, SRDOCS, OS, SR FQTV
+- Alertas de **Vencimientos** de pasaporte o Visas.
+- Genera RM con datos para el backoffice y automatizar la facturación.
 
 ## Módulo CopiarTst
 - Copia el texto plano de un TST
@@ -66,7 +61,8 @@ docker stats
 - Quedan todos los parámetros guardados por defecto con un trazado de usuario / hora.
 
 ## Nice to Have
-Escribir una función que tome de Odoo la ruta / Fecha / Cía para pegar un renglón en Amadeus y cotizar.
-
+- Escribir una función que tome de Odoo la ruta / Fecha / Cía para pegar un renglón en Amadeus y cotizar.
+- módulo de markups
+- 
 
 

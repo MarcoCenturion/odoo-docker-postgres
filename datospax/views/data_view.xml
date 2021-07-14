@@ -90,6 +90,19 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="datospax_calendar_visa">
+      <field name="model">pax.data</field>
+      <field name="arch" type="xml">
+        <calendar string="Expirity Visa Usa" 
+          date_start="visa_us_tl" color="surname"
+          mode="month">
+            <field name="surname" />
+            <field name="name" />
+        </calendar>
+      </field>
+    </record>
+
+
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="datospax_action_window">
@@ -97,8 +110,6 @@
       <field name="res_model">pax.data</field>
       <field name="view_mode">tree,form,calendar</field>
     </record>
-
-   
 
     <!-- Top menu item -->
 
