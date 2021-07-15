@@ -1,0 +1,46 @@
+<odoo>
+	<data>
+		<record id="view_pax_export_amadeus" model="ir.ui.view">
+			<field name="name">Exportar datos al PNR</field>
+			<field name="model">datospax.pnr.wizard</field>
+			<field name="arch" type="xml">	
+				<form string="Exportador a amadeus">
+					<p class="oe_grey">
+						Generar un renglón para copiar y pegar en amadeus
+					</p>
+					<group>
+						<field name="buscar"/>
+					</group>
+					<separator string="Pasajeros " />
+						<field name="paxs"/>
+						<footer>
+						<button
+							name="export_data"
+							string="Generar renglon"
+							type="object" 
+							class="btn-primary"/>
+						<button
+							string="Cancel"
+							class="btn-secondary"
+							special="cancel"/>
+						</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="action_view_pax_export_amadeus" model="ir.actions.act_window">
+			<field name="name">Exportar</field>	
+<!--			<field name="type">ir.action.act_window</field> -->
+			<field name="res_model">datospax.pnr.wizard</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		<menuitem
+			name="Exportar"
+			id="exportador_datos_wizard_menu"
+			parent="paxdata_menu_root"
+			action="action_view_pax_export_amadeus"
+		/>
+	</data>	
+</odoo>	
