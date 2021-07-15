@@ -11,24 +11,32 @@
             <button type="object" name="_pastetst" string="Pegar Datos" />
             <button type="object" name="_newtst" string="Agregar otro TST" />
           </header>
-              <field name="tst_amadeus"/>
-              </form>
+        <field name="tst_amadeus"/>
+        <field name="cia"/>      
+        <field name="route"/>      
+        <field name="date"/>
+        <field name="bagage"/>
+        <field name="ltd"/>
+        <field name="fare_usd"/>
+        <field name="fare_ars"/>
+        <!-- <field name="taxes"/> -->
+        <field name="ttl"/>
+        <field name="retenc"/>
+        </form>
       </field>
     </record>
-<!--
+
     <record model="ir.ui.view" id="view_sale_order_buttons">
       <field name="name">sale.order.inherit</field>
       <field name="model">sale.order</field>
       <field name="inherit_id" ref="sale.view_order_form"/>
       <field name="arch" type="xml">
-
-
-      <xpath expr = "//field[@name='sale_order_line']" position = "before" >
-         
+<!--
+      <xpath expr = "//field[@name='sale_order_line']" position = "after" >
          <field name="tst_amadeus"/> 
 
       </xpath>
-
+-->
         <form>
           <header>
             <button type="object" name="_copytst" string="Copiar TST ARS" class="oe_highlight" />
@@ -36,23 +44,22 @@
         </form>
       </field>
     </record>
--->
+
 
   <record model="ir.ui.view" id="copiartst_list">
       <field name="name">copiartst_list</field>
       <field name="model">copia.tst</field>
       <field name="arch" type="xml">
         <tree>
-            <field name="cia"/>      
-            <field name="route"/>
-            <field name="date"/>
-            <field name="bagage"/>
-            <field name="ltd"/>
-            <field name="fare_usd"/>
-            <field name="rate"/>
-            <field name="fare_ars"/>
-            <field name="ttl"/>
-            <field name="retenc"/>
+        <field name="cia"/>      
+        <field name="route"/>
+        <field name="date"/>
+        <field name="bagage"/>
+        <field name="ltd"/>
+        <field name="fare_usd"/>
+        <field name="fare_ars"/>
+        <field name="ttl"/>
+        <field name="retenc"/>
          </tree>
       </field>
     </record>

@@ -6,16 +6,28 @@ class CamposPnr(models.TransientModel):
 	_name='datospax.pnr.wizard'
 	_description='Exportar datos de Odoo a Amadeus'
 
-	row_1a = fields.Char(string="Renglon a pegar en 1A", )
+
+	buscar = fields.Char(string="indicar el apellido del pasajero", )
 	paxs = fields.Many2many("pax.data", 
 		string="Seleccionar Pasajeros", 
 		help="Click sobre los pasajeros a importar")
-
-	def export_data(self):
 '''
-		export=self.env['pax.data']
+	def export_data(self):
+		domain=['surname', '!=', self.pax.data(surname(' ')) ]
 
-		if self.surname:
-			row_1a = fields.Char('NM1'+surname+'/'+name)
-
-		return row_1a'''
+		pax=self.env['pax.data']
+		
+		if self.pax.data:
+			domain.append(())
+			pasajero=[
+			'surname',
+			'name',
+			'passport',
+			'private_email',
+			'private_cel_phone',
+			]
+		pax_records=pax.data.search_read(domain.pasajero)
+		data={
+		'pax_records':pax_records,
+		}
+		return self.env.ref('data.pax_renglon_a_amadeus').report_action(self, data=data)'''

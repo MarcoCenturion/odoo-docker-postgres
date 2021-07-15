@@ -11,17 +11,17 @@
           <group name="first">
             <field name="surname" widget="char" placeholder="Evitar Acentos y eñes" />
             <field name="name" widget="char" placeholder="Evitar Acentos y eñes" /> 
-            <field name="dob" widget="date"/>
+            <field name="dob"/>
             <field name="document"/>
-            <field name="passport" widget="char" placeholder="Not -/·,."/>
-            <field name="pass_tl" widget="date"/>
-            <field name="visa_us_tl" widget="date"/>
+            <field name="passport"/>
+            <field name="pass_tl"/>
+            <field name="visa_us_tl"/>
             <field name="ff1" widget="char" placeholder="Frequent Flyer AR383838382" />
             <field name="ff2" widget="char" placeholder="Frequent Flyer LA383838383" />
             <field name="private_email" widget="email" />
-            <field name="private_cel_phone" widget="phone" placeholder="Eg. 351307064"/>
+            <field name="private_cel_phone" widget="phone" placeholder="Without area code 351307064"/>
             <field name="note" widget="Char" 
-              placeholder="Servicios Especiales Eg. VGML separados por , comas" />
+              placeholder="Servicios Especiales Eg. VGML" />
           </group>
 
           <group name="second">
@@ -90,19 +90,6 @@
       </field>
     </record>
 
-    <record model="ir.ui.view" id="datospax_calendar_visa">
-      <field name="model">pax.data</field>
-      <field name="arch" type="xml">
-        <calendar string="Expirity Visa Usa" 
-          date_start="visa_us_tl" color="surname"
-          mode="month">
-            <field name="surname" />
-            <field name="name" />
-        </calendar>
-      </field>
-    </record>
-
-
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="datospax_action_window">
@@ -110,6 +97,8 @@
       <field name="res_model">pax.data</field>
       <field name="view_mode">tree,form,calendar</field>
     </record>
+
+   
 
     <!-- Top menu item -->
 
