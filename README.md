@@ -38,16 +38,24 @@ docker image ls
 docker stats
 
 # Modulo DatosPax
-- Captura datos del pasajero.
-- Automatiza tareas repetitivas.
-- Evita errores de tipeo.
-- Genera un Renglón para pegar en Amadeus con los campos para el PNR con los campos NM, AP, TK, SRDOCS, OS, SR FQTV
-- Alertas de **Vencimientos** de pasaporte o Visas.
-- Genera RM con datos para el backoffice y automatizar la facturación.
+- Agrega Menú / Sub menú **(OK)**.
+- ABM pasajeros. **(OK)**
+- Captura datos del pasajero **Odoo2Amadeus** / **Amadeus2Odoo** 
+- Automatiza tareas repetitivas evita errores de tipeo.  reduce costos por **ADM'S**
+- Genera un Renglón para pegar en Amadeus con los campos para el PNR con los campos NM, AP, TK, SRDOCS, OS, SR FQTV y RM{nrocliente}
+- Versión 2.0 capturará los .AIR de los tkts emitidos y buscará el renglón RM{NROCLIENTE} para armar la factura automatizada. 
+- Ciclo for que enumera los pasajeros y pega ese valor en **/p{valor}**
+- 
+- Alertas de **Vencimientos** de pasaporte o Visas **(OK)**.
+- Genera **RM** con datos para el backoffice y automatizar la facturación.
+- Agrega calidad al proceso de generación de un PNR al incluir FrequentFlyer, servicios especiales, SRDOCS, etc.
+- Este beneficio está disponible en **Profiles** del lado del GDS, pero los datos quedan en una fuente externa.  
+- Teniendo este módulo la agy se independiza del proveedor.
+- **MultiGds**
 
 ## Módulo CopiarTst
-- Copia el texto plano de un TST
-- Recorta los Datos con REGEX
+- Copia el texto plano de un TST **(OK)**
+- Recorta los Datos con REGEX **(OK)**
     + Cía. 
     + Tarifa ARS
     + Tarifa USD
@@ -57,12 +65,55 @@ docker stats
     + Fecha
     + Franqujicia de equipaje
     + Resaltar retención AFIP
-- Arma cotización con varios TST
+- Arma cotización con varios TST, varias veces se corre el proceso.
+- Cambia a dolar BLUE.
 - Quedan todos los parámetros guardados por defecto con un trazado de usuario / hora.
+- HELP al usuario que agregue **/SBF-1** en be odoo con un *tooltip*, para que si el presupuesto salió sin equipaje, invitándolo a gue genere otro con equipaje.
+- Diccionario con grupos de Ciudades / aeropuertos segmentados por región, a subir vía archivo csv.
+- Markups automatizados para las regiones.
+- Securización CRUD de este módulo para administradores solamente.
 
-## Nice to Have
+# Nice to Have
 - Escribir una función que tome de Odoo la ruta / Fecha / Cía para pegar un renglón en Amadeus y cotizar.
-- módulo de markups
-- 
+- Cambiar en JS letras ingresadas por el usuario por las aceptadas en Amadeus. Ñ por N, vocales acentuadas por vocales sin acento.
+
+## Presupuesto
+Dividir presupuestos por tipos de viajes, para mejorar el Revenue Management haciendo reglas de MU puntuales y para poder mostrar estadísticas periódicas (no puede mejorarse lo que no puede medirse).
+
+> Aéreo Internacional Leisure.
+> Aéreo Internacional Migrante.
+> Aéreo Internacional Congreso.
+> Aéreo Internacional a Cliente tiempo compartido.
+> Aéreo Cabotaje corporativo.
+> Aéreo Cabotaje Leisure.
+> Terrestre Argentina Vacaciones.
+> Terrestre noches sueltas internacional.
+ 
+
+Armar método, botón en el **MENU PRESUPUESTO** que automatice la carga de los datos de un TST previamente generado en Amadeus.  
+
+Seleccionar pasajeros de una lista, para generar ese renglón.
+
+- Copiar **MiniRules** o Notas más importantes al presupuesto, también por clipboard (dependemos que el OID de la agy tenga habilitado minirules)
+
+- Idem **Masterpricer**
+
+## Gantt / Linea del tiempo Presupuesto
+cambio de color cuando se carta el TST automatizado al Presupuesto
+
+### Inicio > Cargar TST > Cargar nota > Revisar MU > OK > Enviar por email
+
+
+## Tablero Destinos
+Hacer un tablero de los destinos, con su markup puntual.
+Ver rentabilidad por destinos.
+Idem por tipo de viajes a partir del modelo de presupuesto.
+
+##Tableros
+Rentabilidad promedio por destino, presupuestos por destino
+Rentabilidad por Segmento
+Ratio conversión
+
+
 
 
