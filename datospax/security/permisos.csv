@@ -1,5 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-acces_pax_data_public,pax.data,model_pax_data,,1,1,1,1
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-acces_pax_data_user,pax.data,model_pax_data,pax_data_group_user,1,0,0,0
-acces_pax_data_manager,pax.data,model_pax_data,pax_data_group_manager,1,1,1,1
