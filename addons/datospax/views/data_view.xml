@@ -1,0 +1,113 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="datospax_form">
+      <field name="name">paxdata_form</field>
+      <field name="model">pax.data</field>
+      <field name="arch" type="xml">
+        <form>
+        <group name="top">
+          <group name="first">
+            <field name="surname" widget="char" placeholder="Evitar Acentos y eñes" />
+            <field name="name" widget="char" placeholder="Evitar Acentos y eñes" /> 
+            <field name="dob"/>
+            <field name="document"/>
+            <field name="passport"/>
+            <field name="pass_tl"/>
+            <field name="visa_us_tl"/>
+            <field name="ff1" widget="char" placeholder="Frequent Flyer AR383838382" />
+            <field name="ff2" widget="char" placeholder="Frequent Flyer LA383838383" />
+            <field name="private_email" widget="email" />
+            <field name="private_cel_phone" widget="phone" placeholder="Without area code 351307064"/>
+            <field name="note" widget="Char" 
+              placeholder="Servicios Especiales Eg. VGML" />
+          </group>
+
+          <group name="second">
+            <field name="doc_image" widget="image" options='{"size": [200, 200]}' />
+          </group>
+
+          <group name="third">
+            <field name="passanger_image" widget="image" options='{"size": [200, 200]}' />
+          </group>
+
+          <group name="fourth">
+            <field name="visa_us_image" widget="image" options='{"size": [200,200]}' />
+          </group>
+
+           <notebook>
+              <page string="Contact" name="Family passangers" >
+                <field name="contact_relation" widget="many2many_tags" string="Family members" />
+            </page>
+            </notebook> 
+        </group>
+        </form>
+      </field>
+    </record>
+
+  <record model="ir.ui.view" id="datospax_list">
+      <field name="name">paxdata_list</field>
+      <field name="model">pax.data</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="surname"/>
+          <field name="name"/> 
+          <field name="dob"/>
+          <field name="document"/>
+          <field name="passport"/>
+          <field name="pass_tl"/>
+          <field name="private_email"/>
+          <field name="private_cel_phone"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="datospax_filter">
+      <field name="name">paxdata_filter</field>
+      <field name="model">pax.data</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="surname"/>
+          <field name="name"/> 
+          <field name="dob"/>
+          <field name="document"/>
+          <field name="private_email"/>
+          <field name="private_cel_phone"/>
+        </search>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="datospax_calendar_pass">
+      <field name="model">pax.data</field>
+      <field name="arch" type="xml">
+        <calendar string="Expirity passport" 
+          date_start="pass_tl" color="surname"
+          mode="month">
+            <field name="surname" />
+            <field name="name" />
+        </calendar>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="datospax_action_window">
+      <field name="name">Passanger Data</field>
+      <field name="res_model">pax.data</field>
+      <field name="view_mode">tree,form,calendar</field>
+    </record>
+
+   
+
+    <!-- Top menu item -->
+
+    <menuitem name="Passanger" id="paxdata_menu_root"/>
+ 
+    <!-- menu categories -->
+
+    <menuitem name="Documentation" id="paxdata_document" parent="paxdata_menu_root" 
+    action="datospax_action_window"/>
+   
+  </data>
+</odoo>
