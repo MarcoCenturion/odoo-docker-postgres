@@ -64,8 +64,7 @@ Crear un usuario odoo con permisos para postgres en el container
     + Franqujicia de equipaje
     + Resaltar retención AFIP
 ---
-
-'''Corrigiendo Monedas que figuraban como flotantes'''
+Este módulo aún tiene los modelos como flotantes, debemos 'corregir Monedas del tst para que podamos aplicarles tipos de cambio'
 
 ---
 ![Imagen TST Copiado](/Static/tst1.jpg "TST Copiado")

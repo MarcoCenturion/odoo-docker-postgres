@@ -32,7 +32,8 @@
         #'views/pax_data_view.xml',
         'views/templates.xml',
         'views/data_view.xml',
-        'wizard/campos_pnr.xml'
+        'wizard/campos_pnr.xml',
+        #'report/export_pnr_data.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
