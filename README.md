@@ -32,11 +32,11 @@ Crear un usuario odoo con permisos para postgres en el container
 
 ## Módulo DatosPax (40 hs. desarrollo / Realizadas 10)
 - [x] Agrega Menú / Sub menú **(OK)**.
-![Menú datospax](../static/datospax1.jpg)
+![Menú datospax](/Static/datospax1.jpg "Menu DatosPax")
 - [x] ABM pasajeros. **(OK)**
-- ![ABM datospax](../static/datospax2.jpg)
+- ![ABM datospax](/Static/datospax2.jpg "Form datos pax")
 - [x] Captura datos del pasajero **Odoo2Amadeus** / **Amadeus2Odoo** 
-- ![copiar datospax para el PNR](../static/datospax3.jpg)
+- ![copiar datospax para el PNR](/Static/datospax3.jpg "Datos pax al pnr")
 - Automatiza tareas repetitivas evita errores de tipeo.  reduce costos por **ADM'S**
 - [ ] Genera un Renglón para pegar en Amadeus con los campos para el PNR con los campos **NM, AP, TK, SRDOCS, OS, SR FQTV y RM{nrocliente}**
 - [ ] Ciclo for que enumera los pasajeros y pega ese valor en **/p{valor}**
@@ -50,8 +50,8 @@ Crear un usuario odoo con permisos para postgres en el container
 ---
 
 ## Módulo CopiarTst (30 hs. desarrollo, realizadas 5)
-- [x] Copia el texto plano de un TST **(OK)** que están en el ejemplo: /static/tst.txt
-![Imagen del capturador del tst](../static/tst2.jpg)
+- [x] Copia el texto plano de un TST **(OK)** que están en el ejemplo: /Static/tst.txt
+![Imagen del capturador del tst](/Static/tst2.jpg "Capturador")
 - [x] Recorta los Datos con REGEX **(OK)**
 
     + Cía. 
@@ -67,7 +67,7 @@ Crear un usuario odoo con permisos para postgres en el container
 ''' Corrigiendo Monedas que figuraban como flotantes
 '''
 ---
-![Imagen TST Copiado](/static/tst1.jpg "TST Copiado")
+![Imagen TST Copiado](/Static/tst1.jpg "TST Copiado")
 - [ ] Arma cotización con varios TST, varias veces se corre el proceso.
 - [ ] Cambia a dolar BLUE.
 - [ ] Quedan todos los parámetros guardados por defecto con un trazado de usuario / hora.
