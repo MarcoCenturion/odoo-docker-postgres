@@ -64,12 +64,13 @@ Crear un usuario odoo con permisos para postgres en el container
     + Franqujicia de equipaje
     + Resaltar retención AFIP
 ---
-''' Corrigiendo Monedas que figuraban como flotantes
-'''
+
+'''Corrigiendo Monedas que figuraban como flotantes'''
+
 ---
 ![Imagen TST Copiado](/Static/tst1.jpg "TST Copiado")
 - [ ] Arma cotización con varios TST, varias veces se corre el proceso.
-- [ ] Cambia a dolar BLUE.
+- [ ] Cambia a dolar Turista.  Agregar 2 dolares distintos.
 - [ ] Quedan todos los parámetros guardados por defecto con un trazado de usuario / hora.
 - [ ] HELP al usuario que agregue **/SBF-1** en be odoo con un *tooltip*, para que si el presupuesto salió sin equipaje, invitándolo a gue genere otro con equipaje.
 - [ ] Diccionario con grupos de Ciudades / aeropuertos segmentados por región, a subir vía archivo csv.
@@ -88,7 +89,6 @@ Crear un usuario odoo con permisos para postgres en el container
 - [ ] Escribir una función que tome de Odoo la ruta / Fecha / Cía para pegar un renglón en Amadeus y cotizar.
 - [ ] Cambiar en JS letras ingresadas por el usuario por las aceptadas en Amadeus. Ñ por N, vocales acentuadas por vocales sin acento.
 - [ ] Editar en la nube.
-- [ ] 
 
  
 ---
@@ -133,7 +133,7 @@ cambio de color cuando se carta el TST automatizado al Presupuesto
 - [ ] Ver rentabilidad por destinos.
 - [ ] Idem por tipo de viajes a partir del modelo de presupuesto.
 
-##Tableros
+## Tableros de comando comercial
 - [ ] Rentabilidad promedio por destino, presupuestos por destino
 - [ ] Rentabilidad por Segmento
 - [ ] Ratio conversión
