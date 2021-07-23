@@ -2,13 +2,16 @@
 
 Crearemos un repositorio donde guardar la configuracion de un dockerfile y docker-compose para levantar contenedores de docker que corran odoo y postgres
 
-el objetivo es levantar en producción en poco tiempo un backup
+El objetivo es levantar varias instancias en la nube con docker, una en producción, otra en testing, otra solo de postgres y una última con todos los backups.  Tener el mínimo off line posible.
 
-## pasos
-1- correr systemctl start docker
+*Revisar SublimeText para editar en la nube!*
+
+
+## Pasos
+1- Correr systemctl start docker
 2- Primer paso, crear el archivo docker-compose.yml
-3- guardar el odoo.conf en la ruta del volumen del contenedor
-4- persistir los datos en los volúmenes
+3- Guardar el odoo.conf en la ruta del volumen del contenedor
+4- Persistir los datos en los volúmenes
 
 **Arrancar los contenedores**
 Correr esto en el mismo directorio donde está el archivo docker-compose.yml
@@ -37,23 +40,23 @@ docker image ls
 ## Ver los contenedores corriendo
 docker stats
 
-# Modulo DatosPax
+# Modulos Odoo para Agencias de Viajes 
+
+## Módulo DatosPax (40 hs. desarrollo / Realizadas 10)
 - Agrega Menú / Sub menú **(OK)**.
 - ABM pasajeros. **(OK)**
 - Captura datos del pasajero **Odoo2Amadeus** / **Amadeus2Odoo** 
 - Automatiza tareas repetitivas evita errores de tipeo.  reduce costos por **ADM'S**
-- Genera un Renglón para pegar en Amadeus con los campos para el PNR con los campos NM, AP, TK, SRDOCS, OS, SR FQTV y RM{nrocliente}
-- Versión 2.0 capturará los .AIR de los tkts emitidos y buscará el renglón RM{NROCLIENTE} para armar la factura automatizada. 
+- Genera un Renglón para pegar en Amadeus con los campos para el PNR con los campos **NM, AP, TK, SRDOCS, OS, SR FQTV y RM{nrocliente}**
 - Ciclo for que enumera los pasajeros y pega ese valor en **/p{valor}**
-- 
 - Alertas de **Vencimientos** de pasaporte o Visas **(OK)**.
 - Genera **RM** con datos para el backoffice y automatizar la facturación.
 - Agrega calidad al proceso de generación de un PNR al incluir FrequentFlyer, servicios especiales, SRDOCS, etc.
 - Este beneficio está disponible en **Profiles** del lado del GDS, pero los datos quedan en una fuente externa.  
 - Teniendo este módulo la agy se independiza del proveedor.
-- **MultiGds**
+- **MultiGds** le da independencia a la agy incluso del GDS
 
-## Módulo CopiarTst
+## Módulo CopiarTst (30 hs. desarrollo, realizadas 5)
 - Copia el texto plano de un TST **(OK)**
 - Recorta los Datos con REGEX **(OK)**
     + Cía. 
@@ -72,6 +75,9 @@ docker stats
 - Diccionario con grupos de Ciudades / aeropuertos segmentados por región, a subir vía archivo csv.
 - Markups automatizados para las regiones.
 - Securización CRUD de este módulo para administradores solamente.
+
+## Módulo importador de TKTS (20 hs. desarrollo)
+- Capturar los .AIR (amadeus) o .SPL (sabre) de los tkts emitidos, parcear toda la info contable, y buscará el renglón RM{NROCLIENTE} para armar la factura automatizada. 
 
 # Nice to Have
 - Escribir una función que tome de Odoo la ruta / Fecha / Cía para pegar un renglón en Amadeus y cotizar.
