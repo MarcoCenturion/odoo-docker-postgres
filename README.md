@@ -67,7 +67,7 @@ Crear un usuario odoo con permisos para postgres en el container
 ''' Corrigiendo Monedas que figuraban como flotantes
 '''
 ---
-![Imagen TST Copiado](../static/tst1.jpg)
+![Imagen TST Copiado](https://github.com/MarcoCenturion/odoo-docker-postgres/static/tst1.jpg "TST Copiado")
 - [ ] Arma cotización con varios TST, varias veces se corre el proceso.
 - [ ] Cambia a dolar BLUE.
 - [ ] Quedan todos los parámetros guardados por defecto con un trazado de usuario / hora.
