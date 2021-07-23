@@ -44,8 +44,11 @@ docker stats
 
 ## Módulo DatosPax (40 hs. desarrollo / Realizadas 10)
 - Agrega Menú / Sub menú **(OK)**.
+![Menú datospax](/static/datospax1.jpg)
 - ABM pasajeros. **(OK)**
+- ![ABM datospax](/static/datospax2.jpg)
 - Captura datos del pasajero **Odoo2Amadeus** / **Amadeus2Odoo** 
+- ![copiar datospax para el PNR](/static/datospax3.jpg)
 - Automatiza tareas repetitivas evita errores de tipeo.  reduce costos por **ADM'S**
 - Genera un Renglón para pegar en Amadeus con los campos para el PNR con los campos **NM, AP, TK, SRDOCS, OS, SR FQTV y RM{nrocliente}**
 - Ciclo for que enumera los pasajeros y pega ese valor en **/p{valor}**
@@ -57,7 +60,8 @@ docker stats
 - **MultiGds** le da independencia a la agy incluso del GDS
 
 ## Módulo CopiarTst (30 hs. desarrollo, realizadas 5)
-- Copia el texto plano de un TST **(OK)**
+- Copia el texto plano de un TST **(OK)** que están en el ejemplo: /static/tst.txt
+![Imagen del capturador del tst](/static/tst2.jpg)
 - Recorta los Datos con REGEX **(OK)**
     + Cía. 
     + Tarifa ARS
@@ -68,6 +72,9 @@ docker stats
     + Fecha
     + Franqujicia de equipaje
     + Resaltar retención AFIP
+
+Corrigiendo Monedas que figuraban como flotantes.
+![Imagen TST Copiado](/static/tst1.jpg)
 - Arma cotización con varios TST, varias veces se corre el proceso.
 - Cambia a dolar BLUE.
 - Quedan todos los parámetros guardados por defecto con un trazado de usuario / hora.
