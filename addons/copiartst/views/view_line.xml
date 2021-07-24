@@ -10,7 +10,7 @@
         <form>
          <header>
              <button type="object" name="copia.tst" string="TST USD" class="oe_highlight" />
-             <button type="object" name="_tstars" string="TST ARS" with='0.1" options='{"warn": true}' />
+             <button type="object" name="_tstars" string="TST ARS" with='0.1" options={"warn": true}' />
           </header>
 
         <field name="line_air"/>
