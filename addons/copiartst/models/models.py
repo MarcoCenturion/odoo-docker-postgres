@@ -52,7 +52,7 @@ class Copiatst(models.Model):
 	@api.depends('tst_amadeus')
 	def _cia(self):
 		if self.tst_amadeus:
-			self.cia=re.findall('CARRIER (..)', self.tst_amadeus)[0]
+			self.cia=re.findall('BG CXR: (..) ', self.tst_amadeus)[0]
 		
 	tst_amadeus = fields.Text('Copia del tst')
 	route = fields.Char('Ruta', compute='_route', store=True)
