@@ -14,6 +14,7 @@ El objetivo es levantar varias instancias en la nube con docker, una en producci
 ---
 
 ## Pasos
+
 -1 [ ] Correr systemctl start docker
 -2 [ ] Primer paso, crear el archivo docker-compose.yml
 -3 [ ] Guardar el odoo.conf en la ruta del volumen del contenedor
