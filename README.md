@@ -64,7 +64,7 @@ El objetivo es levantar varias instancias en la nube con docker, una en producci
 ![Vto Pasaporte y Visa USA](/Static/datospax4.jpg "Formulario de Carga")
 
 
-![Vista Calendario VTO Pass ](/Static/datospax4.jpg "Calendario Vencimientos")
+![Vista Calendario VTO Pass ](/Static/datospax5.jpg "Calendario Vencimientos")
 
 - [ ] Segmentador de público.
 - [x] Genera **RM** con datos para el backoffice y automatizar la facturación.
@@ -110,7 +110,7 @@ El objetivo es levantar varias instancias en la nube con docker, una en producci
 
 - [ ] Arma cotización con varios 'TST', varias veces se corre el proceso, varios botones dependiendo si la cotización es en ARS o en USD.
 
-![Agregar botones que faltan COT USD / COT ARS / AGREGAR SEGURO XX / ETC](/Static/tst4.jpg "Botones para cotizaciones distintas")
+![Agregar botones que faltan COT USD / COT ARS / AGREGAR SEGURO XX / ETC](/Static/tst5.jpg "Botones para cotizaciones distintas")
 
 - [ ] Cambia a dolar Turista.  Agregar 2 dolares distintos.
 - [ ] Quedan todos los parámetros guardados por defecto con un trazado de usuario / hora.
@@ -186,7 +186,7 @@ Cambio de color cuando se carta el TST automatizado al Presupuesto
 
 - [ ] Rentabilidad promedio por destino, presupuestos por destino
 - [ ] Rentabilidad por Segmento
-- [ ] Ratio conversión
+- [ ] Ratio conversión 
 
 
 
