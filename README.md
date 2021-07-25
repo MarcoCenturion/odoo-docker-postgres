@@ -7,7 +7,7 @@ Crearemos un repositorio donde guardar la configuracion de un dockerfile y docke
 - nginx
 - pgadmin
 
-El objetivo es levantar varias instancias en la nube con docker, una en producción, otra en testing, otra solo de postgres y una última con todos los backups.  Tener el mínimo off line posible.
+El objetivo es levantar varias instancias en la nube con docker, una en **producción**, otra en **testing**, otra solo de postgres y una última con todos los backups.  Tener el mínimo off line posible.
 
 *Revisar SublimeText para editar en la nube!*
 
