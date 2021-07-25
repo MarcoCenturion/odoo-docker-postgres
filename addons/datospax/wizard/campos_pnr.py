@@ -8,6 +8,7 @@ class CamposPnr(models.TransientModel):
 
 
 	buscar = fields.Char(string="indicar el apellido del pasajero", )
+	row_1a = fields.Char(string="Renglon a pegar en 1A", )
 	paxs = fields.Many2many("pax.data", 
 		string="Seleccionar Pasajeros", 
 		help="Click sobre los pasajeros a importar")

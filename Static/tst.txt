@@ -21,3 +21,119 @@ FXU/TS TO UPSELL EB-EP FOR 7777.90ARS
 BG CXR: AR                                                                      
 PRICED WITH VALIDATING CARRIER AR - REPRICE IF DIFFERENT VC                     
 ENDOS NONREF/NONEND -BG:AR
+
+
+---
+
+
+
+
+FQQ10
+
+10 SLN5NSM1   *          * 1          * 152098.90  *RB    *Y
+
+LAST TKT DTE 26JUL21 - SEE ADV PURCHASE
+------------------------------------------------------------
+     AL FLGT  BK T DATE  TIME  FARE BASIS      NVB  NVA   BG
+ BUE
+ MIA AA       S  S 12NOV       SLN5NSM1                   1P
+ NYC AA       S  S 20NOV       SLN5NSM1                   1P
+XMIA AA       S  S 24NOV       SLN5NSM1        21NOV      1P
+ BUE AA       S  S             SLN5NSM1        21NOV      1P
+
+USD   800.00      12NOV21BUE AA MIA Q150.00AA NYC M BUEMIA
+ARS 81200.00      255.00AA X/MIA AA BUE Q150.00 M245.00NUC
+ARS  5684.00-AR   800.00END ROE1.000000
+ARS 24360.00-O5   XT ARS 28420.00-Q1 ARS 1015.00-QO ARS
+ARS 40854.90-XT   812.00-TQ ARS 3416.50-XR ARS 1136.80-AY
+ARS152098.90      ARS 1938.70-US ARS 1938.70-US ARS 401.90
+                  -XA ARS 710.50-XY ARS 608.00-YC ARS 456.80
+                  -XF MIA4.50
+>                                                 PAGE  3/ 4
+
+>
+
+m
+
+RATE USED 1USD=101.50000ARS                                                     
+FARE FAMILIES:    (ENTER FQFN FOR DETAILS, FXY FOR UPSELL)                      
+FARE FAMILY:FC1:1-2:MAIN                                                        
+FARE FAMILY:FC2:3-4:MAIN                                                        
+TICKET STOCK RESTRICTION                                                        
+BG CXR: AA                                                                      
+PRICED WITH VALIDATING CARRIER AA - REPRICE IF DIFFERENT VC                     
+FARE VALID FOR E TICKET ONLY                                                    
+TICKETS ARE NON-REFUNDABLE                                                      
+ENDOS /C1-4 NONREF/RESTRICTIONS APPLY -BG:AA                                    
+>                                                 PAGE  4/ 4                    
+                                                                                
+
+
+
+FXP
+
+01 CENTURION/MARCO*
+
+LAST TKT DTE 28JUL21/23:59 LT in POS - SEE ADV PURCHASE
+------------------------------------------------------------
+     AL FLGT  BK T DATE  TIME  FARE BASIS      NVB  NVA   BG
+ BUE
+XSAO G3  7675 A  A 01NOV 1625  AL4BZSAR        25JUL25JUL 1P
+ RIO G3  1090 A  A 01NOV 2125  AL4BZSAR        25JUL25JUL 1P
+XSAO G3  1699 A  A 11NOV 0615  AL4BZSAR        25JUL25JUL 1P
+ BUE G3  7682 A  A 11NOV 1000  AL4BZSAR        25JUL25JUL 1P
+
+USD   290.00      01NOV21BUE G3 X/SAO G3 RIO145.00G3 X/SAO G
+ARS 29435.00      3 BUE145.00NUC290.00END ROE1.000000
+ARS  2060.50-AR   XT ARS 10302.30-Q1 ARS 1015.00-QO ARS
+ARS  8830.50-O5   812.00-TQ ARS 5785.50-XR ARS 1382.90-BR
+ARS 20525.20-XT   ARS 1227.50-BR
+ARS 60851.20
+RATE USED 1USD=101.50000ARS
+NO CHARGEABLE ANCILLARY SERVICE
+>                                                 PAGE  2/ 3
+
+>
+
+m
+
+BG CXR: 2*G3/2*G3                                                               
+PRICED WITH VALIDATING CARRIER G3 - REPRICE IF DIFFERENT VC                     
+TICKETS ARE NON REFUNDABLE AFTER DEPARTURE                                      
+PAYMT NON ENDORSABLE                                                            
+
+----
+
+FXR
+
+01 P1
+ITINERARY REBOOKED
+LAST TKT DTE 28JUL21/23:59 LT in POS - SEE ADV PURCHASE
+------------------------------------------------------------
+     AL FLGT  BK T DATE  TIME  FARE BASIS      NVB  NVA   BG
+ BUE
+ MAD IB  6856 S  S 01SEP 1320  SNL0NQB3        01SEP01SEP 0P
+ BUE IB  6841 E *E 01OCT 2355  ENH45B          01OCT01OCT 2P
+
+USD  1491.00      01SEP21BUE IB MAD Q14.00 240.00IB BUE Q
+ARS151337.00      14.00 1223.00NUC1491.00END ROE1.000000
+ARS 14018.20-AR   XT ARS 60078.00-O5 ARS 70091.00-Q1 ARS
+ARS 48923.00-YQ   1015.00-QO ARS 812.00-TQ ARS 5785.50-XR
+ARS140755.70-XT   ARS 2495.60-JD ARS 74.20-OG ARS 404.40-QV
+ARS355033.90
+RATE USED 1USD=101.50000ARS
+NO BAG INCLUDED FOR AT LEAST ONE FLIGHT
+FARE FAMILIES:    (ENTER FQFn FOR DETAILS, FXY FOR UPSELL)
+FARE FAMILY:FC1:1:NOBAG
+>                                                 PAGE  2/ 3
+
+>m
+FARE FAMILY:FC2:2:PREECOPROM                                                    
+FXU/TS TO UPSELL BAGSEAT-PREECOPROM FOR 8204.40ARS                              
+TICKET STOCK RESTRICTION                                                        
+BG CXR: IB/IB                                                                   
+PRICED WITH VALIDATING CARRIER IB - REPRICE IF DIFFERENT VC                     
+TICKETS ARE NON-REFUNDABLE                                                      
+ENDOS CHGS AND REF RESTRICTED                                                   
+PAYMT RESTRICTIONS APPLY                                                        
+>                                                 PAGE  3/ 3
