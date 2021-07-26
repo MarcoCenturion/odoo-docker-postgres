@@ -6,14 +6,27 @@
       <field name="model">sale.order</field>
       <field name="inherit_id" ref="sale.view_order_form"/>
       <field name="arch" type="xml">
-     <xpath expr = "//field[@name='order_line']" position ="before">
+      <xpath expr = "//" position = "" >
         <form>
-         <header>
-             <button type="object" name="copia.tst" string="TST USD" class="oe_highlight" />
-             <button type="object" name="_tstars" string="TST ARS" with='0.1" options={"warn": true}' />
+          <header>
+            <button type="object" name="_copytst" string="Copiar TST" class="oe_highlight" />
+            <button type="object" name="_pastetst" string="Pegar Datos" />
+            <button type="object" name="_newtst" string="Agregar otro TST" />
           </header>
 
-        <field name="line_air"/>
+<!--         
+        <field name="tst_amadeus"/>
+        <field name="cia"/>      
+        <field name="route"/>      
+        <field name="date"/>
+        <field name="bagage"/>
+        <field name="ltd"/>
+        <field name="fare_usd"/>
+        <field name="fare_ars"/>
+        <field name="taxes"/>
+        <field name="ttl"/>
+        <field name="retenc"/>
+-->
         </form>
       </field>
     </record>
