@@ -44,14 +44,13 @@ ENDOS /C1-2 NONREF/NOCHG/BASIC -BG:AA
                   
                                                                                 
 '''
-retenc = re.findall('ARS (\D{0,3}\d{1,6}.\d{2})(Q1|-Q1)', tst_amadeus)[0][0]
+rate = re.findall('(DTE \d{2}\D{3}\d{2}/\d{2}:\d{2}|DTE \d{2}\D{3}\d{2})', tst_amadeus)[0]
 
-print(retenc)
-'''
-retenc=list(retenc)
-print(retenc)
-for i in retenc:
+print(rate)
+
+rate=list(rate)
+print(rate)
+for i in rate:
 	if i != '':
-		retenc = i
-		print(retenc)
-'''
+		rate = i
+		print(rate)

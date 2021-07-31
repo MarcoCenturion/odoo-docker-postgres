@@ -137,3 +137,42 @@ TICKETS ARE NON-REFUNDABLE
 ENDOS CHGS AND REF RESTRICTED                                                   
 PAYMT RESTRICTIONS APPLY                                                        
 >                                                 PAGE  3/ 3
+>                                                 
+>                                                 
+>                                                 11 ZYYR0L     *          * 1          * 108676.60  *RB    *Y
+
+LAST TKT DTE 02AUG21 - SEE ADV PURCHASE
+------------------------------------------------------------
+     AL FLGT  BK T DATE  TIME  FARE BASIS      NVB  NVA   BG
+ BUE
+XMAD UX       Z  Z 10AUG       ZYYR0L          10AUG10AUG 0P
+ ROM UX       Z  Z             ZYYR0L          10AUG10AUG 0P
+XMAD UX       Z  Z             ZYYR0L          10AUG10AUG 0P
+ BUE UX       Z  Z             ZYYR0L          10AUG10AUG 0P
+
+USD    80.00      10AUG21BUE UX X/MAD UX ROM40.00UX X/MAD UX
+ARS  8140.00      BUE40.00NUC80.00END ROE1.000000
+ARS  4002.90-AR   XT ARS 17155.10-O5 ARS 20014.30-Q1 ARS
+ARS 49043.60-YQ   1017.50-QO ARS 814.00-TQ ARS 3424.90-XR
+ARS 47490.10-XT   ARS 2651.80-JD ARS 149.20-OG ARS 488.20-QV
+ARS108676.60      ARS 781.70-HB ARS 993.40-IT
+RATE USED 1USD=101.75000ARS
+NO BAG INCLUDED FOR AT LEAST ONE FLIGHT
+>                                                 PAGE  3/ 4
+
+>
+
+m
+
+FARE FAMILIES:    (ENTER FQFN FOR DETAILS, FXY FOR UPSELL)                      
+FARE FAMILY:FC1:1-2:LITE                                                        
+FARE FAMILY:FC2:3-4:LITE                                                        
+TICKET STOCK RESTRICTION                                                        
+BG CXR: 2*UX/2*UX                                                               
+PRICED WITH VALIDATING CARRIER UX - REPRICE IF DIFFERENT VC                     
+TICKETS ARE NON-REFUNDABLE                                                      
+ENDOS CHGS AND REF RESTRICTED                                                   
+PAYMT RESTRICTIONS APPLY                                                        
+>                                                 PAGE  4/ 4                    
+                                                                                
+

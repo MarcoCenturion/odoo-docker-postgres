@@ -15,11 +15,11 @@
         <field name="cia"/>      
         <field name="route"/>      
         <field name="date"/>
+        <field name="rate"/>
         <field name="bagage"/>
         <field name="ltd"/>
         <field name="fare_usd"/>
         <field name="fare_ars"/>
-        <!-- <field name="taxes"/> -->
         <field name="ttl"/>
         <field name="retenc"/>
         </form>
@@ -56,6 +56,7 @@
         <field name="date"/>
         <field name="bagage"/>
         <field name="ltd"/>
+        <field name="rate"/>
         <field name="fare_usd"/>
         <field name="fare_ars"/>
         <field name="ttl"/>

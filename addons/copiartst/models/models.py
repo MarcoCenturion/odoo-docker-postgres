@@ -41,8 +41,7 @@ class Copiatst(models.Model):
 	@api.depends('tst_amadeus')
 	def _ltd(self):
 		if self.tst_amadeus:
-			self.ltd=re.findall('(DTE \d{2}\D{3}\d{2}/\d{2}:\d{2}|DTE \d{2}\D{3}\d{2})'
-				, self.tst_amadeus)[0]
+			self.ltd=re.findall('(DTE \d{2}\D{3}\d{2}/\d{2}:\d{2}|DTE \d{2}\D{3}\d{2})', self.tst_amadeus)[0]
 
 	@api.depends('tst_amadeus')
 	def _bagage(self):
@@ -54,17 +53,23 @@ class Copiatst(models.Model):
 		if self.tst_amadeus:
 			#self.cia=re.findall('BG CXR: (..) |CARRIER (..)', self.tst_amadeus)[0]			
 			self.cia=''.join(re.findall('BG CXR: (..) |CARRIER (..)', self.tst_amadeus)[0])
+
+	@api.depends('tst_amadeus')
+	def _rate(self):
+		if self.tst_amadeus:
+			self.rate=re.findall(r'1USD=(......)', self.tst_amadeus)[0]
 		
 	tst_amadeus = fields.Text('Copia del tst')
-	route = fields.Char('Ruta', compute='_route', store=True)
-	date = fields.Char('Fecha ida y vuelta', compute='_date', store=True)
-	fare_ars = fields.Char('Tarifas Pesos', compute='_fare_ars', store=True)
-	ttl = fields.Char('Total en pesos', compute='_ttl', store=True)
+	route = fields.Char('Rutas', compute='_route', store=True)
+	date = fields.Char('Fechas ida/vuelta', compute='_date', store=True)
+	fare_ars = fields.Char('Tarifas ARS', compute='_fare_ars', store=True)
+	ttl = fields.Char('Total ARS', compute='_ttl', store=True)
 	fare_usd = fields.Char('Tarifa USD', compute='_fare_usd', store=True)
-	retenc = fields.Char('Retencion AFIP 35%', compute='_retenc', store=True)
-	ltd = fields.Char('Ultimo día para emitir', compute=_ltd, store=True)
-	bagage = fields.Char('Equipaje despachado', compute='_bagage', store=True)
+	retenc = fields.Char('Retenc. AFIP 35%', compute='_retenc', store=True)
+	ltd = fields.Char('Max dia/hora emisión', compute='_ltd', store=True)
+	bagage = fields.Char('Equip. en bodega', compute='_bagage', store=True)
 	cia = fields.Char('Cía Aérea', compute='_cia', store=True)
+	rate = fields.Char('Cambio Amadeus', compute='_rate', store=True)
 	line_air = fields.Many2many('sale.order','order_line', 'Agregar Vuelos')
 
 

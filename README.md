@@ -189,5 +189,13 @@ Cambio de color cuando se carta el TST automatizado al Presupuesto
 - [ ] Ratio conversión 
 
 
+---
+
+## Configurar correo viral y plantillas para publicidades masivas (20 hs)
+- [ ] Cuenta en Mailchimp
+- [ ] Conectarla a odoo
+- [ ] Diseñar plantillas / Buscar hechas
+
+
 
 
