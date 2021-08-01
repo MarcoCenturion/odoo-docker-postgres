@@ -13,6 +13,7 @@
           </header>
         <field name="tst_amadeus"/>
         <field name="cia"/>      
+        <field name="orig"/>      
         <field name="route"/>      
         <field name="date"/>
         <field name="rate"/>
@@ -52,12 +53,13 @@
       <field name="arch" type="xml">
         <tree>
         <field name="cia"/>      
+        <field name="orig"/>      
         <field name="route"/>
         <field name="date"/>
         <field name="bagage"/>
         <field name="ltd"/>
         <field name="rate"/>
-        <field name="fare_usd"/>
+      <!--  <field name="fare_usd"/> -->
         <field name="fare_ars"/>
         <field name="ttl"/>
         <field name="retenc"/>

@@ -9,9 +9,16 @@ class Copiatst(models.Model):
 	
 
 	@api.depends('tst_amadeus')
+	def _orig(self):
+		if self.tst_amadeus:
+			self.orig=re.findall('\n (\w{3})\n', self.tst_amadeus)
+
+
+	@api.depends('tst_amadeus')
 	def _route(self):
 		if self.tst_amadeus:
-			self.route=re.findall('\n[ |X]([A-Z]{3})', self.tst_amadeus)
+			self.route=re.findall('\n \w{3}\v \w{3} \w{2}\n\w|\n([ |X]\w{3} ..)', self.tst_amadeus)
+
 
 	@api.depends('tst_amadeus')
 	def _fare_ars(self):
@@ -36,7 +43,7 @@ class Copiatst(models.Model):
 	@api.depends('tst_amadeus')
 	def _retenc(self):
 		if self.tst_amadeus:
-			self.retenc=re.findall('ARS(\D{0,3}\d{1,6}.\d{2})-Q1', self.tst_amadeus)[0]
+			self.retenc=re.findall('(\d{1,6}.\d{2})-Q1', self.tst_amadeus)[0]
 
 	@api.depends('tst_amadeus')
 	def _ltd(self):
@@ -60,7 +67,8 @@ class Copiatst(models.Model):
 			self.rate=re.findall(r'1USD=(......)', self.tst_amadeus)[0]
 		
 	tst_amadeus = fields.Text('Copia del tst')
-	route = fields.Char('Rutas', compute='_route', store=True)
+	orig = fields.Char('Origen', compute='_orig', store=True)
+	route = fields.Char('Destinos', compute='_route', store=True)
 	date = fields.Char('Fechas ida/vuelta', compute='_date', store=True)
 	fare_ars = fields.Char('Tarifas ARS', compute='_fare_ars', store=True)
 	ttl = fields.Char('Total ARS', compute='_ttl', store=True)

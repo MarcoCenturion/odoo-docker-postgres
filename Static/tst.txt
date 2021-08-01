@@ -176,3 +176,87 @@ PAYMT RESTRICTIONS APPLY
 >                                                 PAGE  4/ 4                    
                                                                                 
 
+---
+FQQ1
+
+01 CENTURION/MARCO*
+ITINERARY REBOOKED
+LAST TKT DTE 25AUG21 - SEE SALES RSTNS
+------------------------------------------------------------
+     AL FLGT  BK T DATE  TIME  FARE BASIS      NVB  NVA   BG
+ BUE
+ ROM AZ   681 L *L 01NOV 1240  LNLGAR          01NOV01NOV 0P
+ BUE AZ   680 L *L 12DEC 2145  LNLGAR          12DEC12DEC 0P
+
+USD   419.00      01NOV21BUE AZ ROM209.50AZ BUE209.50NUC
+ARS 42633.00      419.00END ROE1.000000
+ARS  4937.60-AR   XT ARS 26455.00-YR ARS 21161.30-O5 ARS
+ARS  1449.80-YQ   24688.20-Q1 ARS 1017.50-QO ARS 814.00-TQ
+ARS 84751.60-XT   ARS 5799.80-XR ARS 280.30-EX ARS 906.10-HB
+ARS133772.00      ARS 3115.90-IT ARS 126.90-MJ ARS 386.60-VT
+RATE USED 1USD=101.75000ARS
+NO BAG INCLUDED FOR AT LEAST ONE FLIGHT
+FARE FAMILIES:    (ENTER FQFn FOR DETAILS, FXY FOR UPSELL)
+FARE FAMILY:FC1:1:ECOLIGHT
+>                                                 PAGE  3/ 4
+
+>
+
+m
+
+FARE FAMILY:FC2:2:ECOLIGHT                                                      
+FXU/TS TO UPSELL ECOLIGHT-ECOCLASSIC FOR 7876.00ARS                             
+TICKET STOCK RESTRICTION                                                        
+BG CXR: AZ/AZ                                                                   
+PRICED WITH VALIDATING CARRIER AZ - REPRICE IF DIFFERENT VC                     
+TICKETS ARE NON REFUNDABLE AFTER DEPARTURE                                      
+ENDOS NOENDO VALID AZ ONLY                                                      
+PAYMT NORER/PENALTY APPLIES                                                     
+>                                                 PAGE  4/ 4                    
+                                                                                
+---
+
+
+
+FQQ1
+
+01 CENTURION/MARCO*
+NO REBOOKING REQUIRED FOR LOWEST AVAILABLE FARE
+LAST TKT DTE 25AUG21 - SEE SALES RSTNS
+------------------------------------------------------------
+     AL FLGT  BK T DATE  TIME  FARE BASIS      NVB  NVA   BG
+ BUE
+XROM AZ   681 L  L 02NOV 1240  LNLGAR          02NOV02NOV 0P
+ BCN AZ    74 L  L 03NOV 0900  LNLGAR          03NOV03NOV 0P
+ MAD      S U R F A C E
+ ROM AZ    59 L  L 01DEC 0550  LCLAR           01DEC01DEC 1P
+ BUE AZ   680 L  L 12DEC 2145  LCLAR           12DEC12DEC 1P
+
+USD   234.00      02NOV21BUE AZ X/ROM AZ BCN124.50/-MAD AZ
+ARS 23810.00      ROM AZ BUE109.50NUC234.00END ROE1.000000
+ARS  3620.00-AR   XT ARS 26455.00-YR ARS 15514.40-O5 ARS
+ARS  1449.80-YQ   18100.20-Q1 ARS 1017.50-QO ARS 814.00-TQ
+ARS 76902.40-XT   ARS 5799.80-XR ARS 280.30-EX ARS 1812.20
+ARS105782.20      -HB ARS 3792.50-IT ARS 253.80-MJ ARS
+                  773.20-VT ARS 1806.20-JD ARS 74.90-OG ARS
+>                                                 PAGE  3/ 4
+
+>
+
+m
+
+                  408.40-QV                                                     
+RATE USED 1USD=101.75000ARS                                                     
+NO BAG INCLUDED FOR AT LEAST ONE FLIGHT                                         
+FARE FAMILIES:    (ENTER FQFN FOR DETAILS, FXY FOR UPSELL)                      
+FARE FAMILY:FC1:1-2:ECOLIGHT                                                    
+FARE FAMILY:FC2:4-5:ECOCLASSIC                                                  
+FXU/TS TO UPSELL ECOCLASSIC-ECOCLASSIC FOR 7874.20ARS                           
+TICKET STOCK RESTRICTION                                                        
+BG CXR: 2*AZ/AZ/AZ                                                              
+PRICED WITH VALIDATING CARRIER AZ - REPRICE IF DIFFERENT VC                     
+TICKETS ARE NON REFUNDABLE AFTER DEPARTURE                                      
+ENDOS NONENDO/FARE RESTR APPLY                                                  
+>                                                 PAGE  4/ 4                    
+                                                                                
+

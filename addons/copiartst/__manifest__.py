@@ -28,7 +28,7 @@
         'security/copiartst_security.xml',
         'views/views.xml',
         'views/templates.xml',
-        'view_line.xml',
+        #'views/view_line.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
