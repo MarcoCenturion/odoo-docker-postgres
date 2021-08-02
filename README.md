@@ -100,6 +100,24 @@ El objetivo es levantar varias instancias en la nube con docker, una en **produc
 
 - ![Tst recortado y datos persistidos ](/Static/tst3.jpg "scrap de datos del tst de amadeus")
 
+## Pegarle en el renglon del presupuesto el contenido del TST desmenuzado.
+
+-[ ] Define dictionary to add order_line
+`order_line_dict = { 'order_id' : 9, 'product_id': 2003, 'price_unit': 3000.0, 'product_uom_qty': 2.0, 'name': '' }`
+
+-[ ] Search the order line for the sale order
+`sale_order_line = self.env['sale.order.line'].browse(9)`
+
+-[ ] Create a new order line
+`sale_order_line.create(order_line_dict)`
+
+-[ ] Print sale order lines
+`sale_order_line`
+
+-[ ] Note
+If you are doing/testing this on the Odoo Shell, then make sure to run the following after the changes to reflect on database:
+`self.env.cr.commit()`
+
 ---
 
 ### Nota importante
