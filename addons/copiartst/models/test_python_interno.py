@@ -2,26 +2,57 @@ import re
 tst_amadeus = '''
 
 
-FQQ10
 
-10 SLN5NSM1   *          * 1          * 152098.90  *RB    *Y
+FXR
 
-LAST TKT DTE 26JUL21 - SEE ADV PURCHASE
+01 CENTURION/JULIE*
+ITINERARY REBOOKED
+LAST TKT DTE 02AUG21/23:59 LT in POS - SEE ADV PURCHASE
 ------------------------------------------------------------
      AL FLGT  BK T DATE  TIME  FARE BASIS      NVB  NVA   BG
  BUE
- MIA AA       S  S 12NOV       SLN5NSM1                   1P
- NYC AA       S  S 20NOV       SLN5NSM1                   1P
-XMIA AA       S  S 24NOV       SLN5NSM1        21NOV      1P
- BUE AA       S  S             SLN5NSM1        21NOV      1P
+ MIA AA   900 Y *Y 01SEP 2050  Y                          1P
+ NYC AA   309 V *V 12SEP 0608  V0AHZNN1                   1P
+ LAX AA     1 G  G 20SEP 0800  G7AKZNN1                   1P
+ LAS      S U R F A C E
+XMIA AA   659 Y *Y 03OCT 0015  Y                          1P
+ BUE AA   931 Y *Y 03OCT 2045  Y                          1P
 
-USD   800.00      12NOV21BUE AA MIA Q150.00AA NYC M BUEMIA
-ARS 81200.00      255.00AA X/MIA AA BUE Q150.00 M245.00NUC
-ARS  5684.00-AR   800.00END ROE1.000000
-AR                                            
+USD  6193.00      01SEP21BUE AA MIA Q150.00 2765.00AA NYC
+ARS630138.00      161.86AA LAX200.93/-LAS AA X/MIA AA BUE Q
+ARS 44109.70-AR   150.00 M2765.00NUC6192.79END ROE1.000000
+ARS189041.40-O5   XT ARS 220548.30-Q1 ARS 1017.50-QO ARS
+ARS235388.60-XT   814.00-TQ ARS 5799.80-XR ARS 1139.60-AY
+AR1098677.70      ARS 1943.40-US ARS 1943.40-US ARS 402.90
+>                                                 PAGE  2/ 3
+
+>
+
+m
+
+                  -XA ARS 712.30-XY ARS 609.50-YC ARS 457.90                    
+                  -XF MIA4.50                                                   
+RATE USED 1USD=101.75000ARS                                                     
+FARE FAMILIES:    (ENTER FQFN FOR DETAILS, FXY FOR UPSELL)                      
+FARE FAMILY:FC1:1:MAINFL                                                        
+FARE FAMILY:FC2:5-6:MAINFL                                                      
+FARE FAMILY:FC3:2:MAIN                                                          
+FARE FAMILY:FC4:3:MAIN                                                          
+FXU/TS TO UPSELL MAINFL-MAINFL-MAINFL-MAIN* FOR 238362.80ARS                    
+BG CXR: AA                                                                      
+PRICED WITH VALIDATING CARRIER AA - REPRICE IF DIFFERENT VC                     
+FARE VALID FOR E TICKET ONLY                                                    
+TICKETS ARE NON-REFUNDABLE                                                      
+ENDOS /C2-3 NONREF/FAREDIF/ CXL BY FLT TIME OR NOVALUE -BG:A                    
+      A                                                                         
+ATTN                  ***                                                       
+>                                                 PAGE  3/ 3                    
+                                                                                
+
+
                                                                                 
 '''
-rate = re.findall('\n (\w{3})\n', tst_amadeus)
+rate = re.findall('\n (\w{3})\n', tst_amadeus)[0]
 
 print(rate)
 

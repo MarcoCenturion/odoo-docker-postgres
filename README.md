@@ -78,7 +78,7 @@ El objetivo es levantar varias instancias en la nube con docker, una en **produc
 
 ## Módulo CopiarTst (30 hs. desarrollo / realizadas 5)
 
-- [x] Copia el texto plano de un TST **(OK)** que están en el ejemplo: /Static/tst.txt
+- [x] Copia el texto plano de un TST **(OK)** que están en el ejemplo: `/Static/tst.txt`
 - [ ] Agrear el título que indique al usuario que debe pegar todo el TST completo, las dos o tres páginas para que no se rompa.  Tooltip.
 - [ ] Parsear TST es otro título.   Ver tst guardados.
 - [ ] Error al traer el Q1 cuando cambia de renglón.
@@ -92,7 +92,8 @@ El objetivo es levantar varias instancias en la nube con docker, una en **produc
 - [x] Tarifa USD
 - [x] LTD (fecha y hora del último momento para emitir el tkt)
 - [x] Tipo de cambio (validar contra el GDS)
-- [x] Ruta 
+- [x] Origen
+- [x] Destinos
 - [x] Fechas
 - [x] Franqujicia de equipaje
 - [x] Resaltar retención AFIP
@@ -105,6 +106,7 @@ El objetivo es levantar varias instancias en la nube con docker, una en **produc
 
 - [ ] Este módulo aún tiene los modelos como flotantes, debemos `Corregir Monedas del tst para que podamos aplicarles tipos de cambio`
 - [ ] Posibilidad de ver en el presupuesto las dos monedas y el tipo de cambio.
+- [ ] Boton para que cambie el presupuesto de USD a ARS y viceversa. en este caso USD será el `USD Turista.` 
 - [ ] Aclarar tipos de financiaciones en un modelo para empujar ventas hacia cierta financiación, estimar esfuerzo.
 
 ---

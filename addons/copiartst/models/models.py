@@ -11,7 +11,7 @@ class Copiatst(models.Model):
 	@api.depends('tst_amadeus')
 	def _orig(self):
 		if self.tst_amadeus:
-			self.orig=re.findall('\n (\w{3})\n', self.tst_amadeus)
+			self.orig=re.findall('\n (\w{3})\n', self.tst_amadeus)[0]
 
 
 	@api.depends('tst_amadeus')
@@ -28,7 +28,7 @@ class Copiatst(models.Model):
 	@api.depends('tst_amadeus')
 	def _ttl(self):
 		if self.tst_amadeus:
-			self.ttl=re.findall('\nARS(\D{0,3}\d{1,6}.\d{2})', self.tst_amadeus)[-1]
+			self.ttl=re.findall('\n(ARS|AR|ARS )(\d{1,7}.\d{2})', self.tst_amadeus)[-1][-1]
 
 	@api.depends('tst_amadeus')
 	def _fare_usd(self):
