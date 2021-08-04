@@ -1,6 +1,5 @@
 <odoo>
 <data>
-	
 	<report 
 		id="report_renglon_pnr"
 		string="External report"

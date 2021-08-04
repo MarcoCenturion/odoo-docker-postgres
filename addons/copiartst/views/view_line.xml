@@ -6,27 +6,15 @@
       <field name="model">sale.order</field>
       <field name="inherit_id" ref="sale.view_order_form"/>
       <field name="arch" type="xml">
+   <!--   
       <xpath expr = "//" position = "" >
+   -->   
         <form>
           <header>
-            <button type="object" name="_copytst" string="Copiar TST" class="oe_highlight" />
-            <button type="object" name="_pastetst" string="Pegar Datos" />
-            <button type="object" name="_newtst" string="Agregar otro TST" />
+            <button type="object" name="_copytst" string="+ Cotiz. Inter." class="oe_highlight" />
+            <button type="object" name="_pastetst" string="+ Cotiz. Cabot" />
+            <button type="object" name="_newtst" string="+ Seguro Canc" />
           </header>
-
-<!--         
-        <field name="tst_amadeus"/>
-        <field name="cia"/>      
-        <field name="route"/>      
-        <field name="date"/>
-        <field name="bagage"/>
-        <field name="ltd"/>
-        <field name="fare_usd"/>
-        <field name="fare_ars"/>
-        <field name="taxes"/>
-        <field name="ttl"/>
-        <field name="retenc"/>
--->
         </form>
       </field>
     </record>

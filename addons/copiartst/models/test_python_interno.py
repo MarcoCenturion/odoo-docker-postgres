@@ -2,56 +2,79 @@ import re
 tst_amadeus = '''
 
 
+
 FXR
 
-01 CENTURION/MARCO*
+01 CENTURION/JULIE*
 ITINERARY REBOOKED
-LAST TKT DTE 13JUL21/23:59 LT in POS - SEE ADV PURCHASE
+LAST TKT DTE 02AUG21/23:59 LT in POS - SEE ADV PURCHASE
 ------------------------------------------------------------
      AL FLGT  BK T DATE  TIME  FARE BASIS      NVB  NVA   BG
  BUE
- MIA AA   900 B *B 10NOV 2214  NLN5NZB1        10NOV10NOV 0P
- BUE AA   907 B *B 20NOV 1940  VLN4NSB1        20NOV20NOV 0P
+ MIA AA   900 Y *Y 01SEP 2050  Y                          1P
+ NYC AA   309 V *V 12SEP 0608  V0AHZNN1                   1P
+ LAX AA     1 G  G 20SEP 0800  G7AKZNN1                   1P
+ LAS      S U R F A C E
+XMIA AA   659 Y *Y 03OCT 0015  Y                          1P
+ BUE AA   931 Y *Y 03OCT 2045  Y                          1P
 
-USD   752.00      10NOV21BUE AA MIA290.00AA BUE Q150.00
-ARS 75952.00      312.00NUC752.00END ROE1.000000
-ARS  5316.60-AR   XT ARS 26583.20-Q1 ARS 1010.00-QO ARS
-ARS 22785.60-O5   808.00-TQ ARS 5757.00-XR ARS 565.60-AY ARS
-ARS 40748.50-XT   1929.10-US ARS 1929.10-US ARS 400.00-XA
-ARS144802.70      ARS 707.00-XY ARS 605.00-YC ARS 454.50-XF
-                  MIA4.50
-RATE USED 1USD=101.00000ARS
-NO BAG INCLUDED FOR AT LEAST ONE FLIGHT
-FARE FAMILIES:    (ENTER FQFn FOR DETAILS, FXY FOR UPSELL)
+USD  6193.00      01SEP21BUE AA MIA Q150.00 2765.00AA NYC
+ARS630138.00      161.86AA LAX200.93/-LAS AA X/MIA AA BUE Q
+ARS 44109.70-AR   150.00 M2765.00NUC6192.79END ROE1.000000
+ARS189041.40-O5   XT ARS 220548.30-Q1 ARS 1017.50-QO ARS
+ARS235388.60-XT   814.00-TQ ARS 5799.80-XR ARS 1139.60-AY
+AR1098677.70      ARS 1943.40-US ARS 1943.40-US ARS 402.90
 >                                                 PAGE  2/ 3
 
 >
 
 m
 
-FARE FAMILY:FC1:1:BASIC                                                         
-FARE FAMILY:FC2:2:BASIC                                                         
-FXU/TS TO UPSELL MAIN-MAIN FOR 22583.60ARS                                      
-TICKET STOCK RESTRICTION                                                        
+                  -XA ARS 712.30-XY ARS 609.50-YC ARS 457.90                    
+                  -XF MIA4.50                                                   
+RATE USED 1USD=101.75000ARS                                                     
+FARE FAMILIES:    (ENTER FQFN FOR DETAILS, FXY FOR UPSELL)                      
+FARE FAMILY:FC1:1:MAINFL                                                        
+FARE FAMILY:FC2:5-6:MAINFL                                                      
+FARE FAMILY:FC3:2:MAIN                                                          
+FARE FAMILY:FC4:3:MAIN                                                          
+FXU/TS TO UPSELL MAINFL-MAINFL-MAINFL-MAIN* FOR 238362.80ARS                    
 BG CXR: AA                                                                      
 PRICED WITH VALIDATING CARRIER AA - REPRICE IF DIFFERENT VC                     
 FARE VALID FOR E TICKET ONLY                                                    
 TICKETS ARE NON-REFUNDABLE                                                      
-ENDOS /C1-2 NONREF/NOCHG/BASIC -BG:AA                                           
+ENDOS /C2-3 NONREF/FAREDIF/ CXL BY FLT TIME OR NOVALUE -BG:A                    
+      A                                                                         
+ATTN                  ***                                                       
 >                                                 PAGE  3/ 3                    
                                                                                 
 
-                  
+
                                                                                 
 '''
-retenc = re.findall('ARS (\D{0,3}\d{1,6}.\d{2})(Q1|-Q1)', tst_amadeus)[0][0]
+rate = re.findall('\n (\w{3})\n', tst_amadeus)[0]
 
-print(retenc)
+print(rate)
+
+rate=list(rate)
+print(rate)
+for i in rate:
+     if i != '':
+          rate = i
+          print(rate)
+
 '''
-retenc=list(retenc)
-print(retenc)
-for i in retenc:
-	if i != '':
-		retenc = i
-		print(retenc)
+
+
+sale_order_new.write({
+'order_line': [
+(0,0, {
+'order_id': sale_order.id,
+'product_id': 2003,
+'price_unit': 3000.0,
+'product_uom_qty': 2.0,
+'name': ''
+})
+]
+})
 '''

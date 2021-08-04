@@ -7,19 +7,22 @@
       <field name="arch" type="xml">
         <form>
           <header>
-            <button type="object" name="_copytst" string="Copiar TST" />
+            <button type="object" name="_copytst" string="Copiar TST" class="oe_highlight" />
             <button type="object" name="_pastetst" string="Pegar Datos" />
             <button type="object" name="_newtst" string="Agregar otro TST" />
           </header>
-        <field name="tst_amadeus"/>
+          <p class="oe_blue">Pegá acá todas las paginas del TST</p>
+
+        <field name="tst_amadeus" placeholder="Cotizá en Amadeus, copiá con CTRL+C y pegá aća con CTRL+V "/>
         <field name="cia"/>      
+        <field name="orig"/>      
         <field name="route"/>      
         <field name="date"/>
+        <field name="rate"/>
         <field name="bagage"/>
         <field name="ltd"/>
         <field name="fare_usd"/>
         <field name="fare_ars"/>
-        <!-- <field name="taxes"/> -->
         <field name="ttl"/>
         <field name="retenc"/>
         </form>
@@ -52,10 +55,12 @@
       <field name="arch" type="xml">
         <tree>
         <field name="cia"/>      
+        <field name="orig"/>      
         <field name="route"/>
         <field name="date"/>
         <field name="bagage"/>
         <field name="ltd"/>
+        <field name="rate"/>
         <field name="fare_usd"/>
         <field name="fare_ars"/>
         <field name="ttl"/>
