@@ -80,8 +80,8 @@ El objetivo es levantar varias instancias en la nube con docker, una en **produc
 
 - [x] Copia el texto plano de un TST **(OK)** que están en el ejemplo: `/Static/tst.txt`
 - [ ] Agrear el título que indique al usuario que debe pegar todo el TST completo, las dos o tres páginas para que no se rompa.  Tooltip.
-- [ ] Parsear TST es otro título.   Ver tst guardados.
-- [ ] Error al traer el Q1 cuando cambia de renglón.
+- [x] Parsear TST es otro título.   Ver tst guardados.
+- [x] Error al traer el Q1 cuando cambia de renglón.
 
 ![Imagen del capturador del tst](/Static/tst2.jpg "Capturador")
 
