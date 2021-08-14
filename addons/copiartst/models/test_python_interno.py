@@ -52,7 +52,7 @@ ATTN                  ***
 
                                                                                 
 '''
-rate = re.findall('\n (\w{3})\n', tst_amadeus)[0]
+rate = re.findall('\n \w{3}\v \w{3} \w{2}\n\w|\n([ |X]\w{3} ..)', tst_amadeus)
 
 print(rate)
 
@@ -62,19 +62,3 @@ for i in rate:
      if i != '':
           rate = i
           print(rate)
-
-'''
-
-
-sale_order_new.write({
-'order_line': [
-(0,0, {
-'order_id': sale_order.id,
-'product_id': 2003,
-'price_unit': 3000.0,
-'product_uom_qty': 2.0,
-'name': ''
-})
-]
-})
-'''

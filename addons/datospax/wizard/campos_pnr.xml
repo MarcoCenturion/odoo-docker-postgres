@@ -28,7 +28,7 @@
 			</field>
 		</record>
 
-		<record id="action_view_pax_export_amadeus" model="ir.actions.act_window">
+	<record id="action_view_pax_export_amadeus" model="ir.actions.act_window">
 			<field name="name">Exportar</field>	
 <!--			<field name="type">ir.action.act_window</field> -->
 			<field name="res_model">datospax.pnr.wizard</field>

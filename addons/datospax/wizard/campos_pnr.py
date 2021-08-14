@@ -11,7 +11,7 @@ class CamposPnr(models.TransientModel):
 	paxs = fields.Many2many("pax.data", 
 		string="Seleccionar Pasajeros", 
 		help="Click sobre los pasajeros a importar")
-'''
+
 	def export_data(self):
 		domain=['surname', '!=', self.pax.data(surname(' ')) ]
 
@@ -30,4 +30,4 @@ class CamposPnr(models.TransientModel):
 		data={
 		'pax_records':pax_records,
 		}
-		return self.env.ref('data.pax_renglon_a_amadeus').report_action(self, data=data)'''
+		return self.env.ref('data.pax_renglon_a_amadeus').report_action(self, data=data)
