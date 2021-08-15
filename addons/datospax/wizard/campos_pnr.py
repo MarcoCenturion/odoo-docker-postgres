@@ -3,7 +3,7 @@ from odoo.exceptions import UserError
 
 
 class CamposPnr(models.TransientModel):
-	_name='datospax.pnr.wizard'
+	_name='pnr.wizard'
 	_description='Exportar datos de Odoo a Amadeus'
 
 
@@ -13,21 +13,5 @@ class CamposPnr(models.TransientModel):
 		help="Click sobre los pasajeros a importar")
 
 	def export_data(self):
-		domain=['surname', '!=', self.pax.data(surname(' ')) ]
-
-		pax=self.env['pax.data']
-		
-		if self.pax.data:
-			domain.append(())
-			pasajero=[
-			'surname',
-			'name',
-			'passport',
-			'private_email',
-			'private_cel_phone',
-			]
-		pax_records=pax.data.search_read(domain.pasajero)
-		data={
-		'pax_records':pax_records,
-		}
-		return self.env.ref('data.pax_renglon_a_amadeus').report_action(self, data=data)
+		data = {"ids": self.ids,"model": "datos.pax","form": self.read()[0],}
+		return self.env.ref("datospax.view_pax_export_amadeus")
