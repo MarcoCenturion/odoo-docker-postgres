@@ -7,6 +7,8 @@
 				<form string="Exportador a amadeus">
 					<p class="oe_grey">
 						Generar un renglón para copiar y pegar en amadeus
+						<t t-field="pnr.wizard.paxs" />
+						<t t-esc = "surname" />
 					</p>
 					<group>
 						<field name="buscar"/>
@@ -24,8 +26,6 @@
 							class="btn-secondary"
 							special="cancel"/>
 						</footer>
-						<t t-field="pnr.wizard.paxs" />
-						<t t-esc = "surname" />
 				</form>
 			</field>
 		</record>
