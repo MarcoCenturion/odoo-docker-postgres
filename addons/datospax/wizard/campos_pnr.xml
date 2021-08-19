@@ -2,7 +2,7 @@
 	<data>
 		<record id="view_pax_export_amadeus" model="ir.ui.view">
 			<field name="name">Exportar datos al PNR</field>
-			<field name="model">datospax.pnr.wizard</field>
+			<field name="model">pnr.wizard</field>
 			<field name="arch" type="xml">	
 				<form string="Exportador a amadeus">
 					<p class="oe_grey">
@@ -24,16 +24,19 @@
 							class="btn-secondary"
 							special="cancel"/>
 						</footer>
+						<t t-field="pnr.wizard.paxs" />
+						<t t-esc = "surname" />
 				</form>
 			</field>
 		</record>
 
-		<record id="action_view_pax_export_amadeus" model="ir.actions.act_window">
-			<field name="name">Exportar</field>	
+	<record id="action_view_pax_export_amadeus" model="ir.actions.act_window">
+			<field name="name">Exportar Datos</field>	
 <!--			<field name="type">ir.action.act_window</field> -->
-			<field name="res_model">datospax.pnr.wizard</field>
+			<field name="res_model">pnr.wizard</field>
 			<field name="view_mode">form</field>
-			<field name="target">new</field>
+			<field name="view_id" ref="view_pax_export_amadeus"/>
+            <field name="target">new</field>
 		</record>
 
 		<menuitem

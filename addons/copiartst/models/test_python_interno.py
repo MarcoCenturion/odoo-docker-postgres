@@ -30,7 +30,11 @@ ENDOS NONREF/NONEND -BG:AR
 self.cia=''.join(re.findall('BG CXR: (..) |CARRIER (..)', self.tst_amadeus)[0])
                                                                                 
 '''
+<<<<<<< HEAD
 rate = re.findall('1USD=(......)', tst_amadeus)
+=======
+rate = re.findall('\n \w{3}\v \w{3} \w{2}\n\w|\n([ |X]\w{3} ..)', tst_amadeus)
+>>>>>>> e53a4bf484b67ea630c1873fc835fe596f27eac0
 
 print(rate)
 
@@ -40,19 +44,3 @@ for i in rate:
      if i != '':
           rate = i
           print(rate)
-
-'''
-
-
-sale_order_new.write({
-'order_line': [
-(0,0, {
-'order_id': sale_order.id,
-'product_id': 2003,
-'price_unit': 3000.0,
-'product_uom_qty': 2.0,
-'name': ''
-})
-]
-})
-'''

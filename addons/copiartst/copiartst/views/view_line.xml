@@ -1,0 +1,22 @@
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="view_sale_order_buttons">
+      <field name="name">sale.order.inherit</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form"/>
+      <field name="arch" type="xml">
+   <!--   
+      <xpath expr = "//" position = "" >
+   -->   
+        <form>
+          <header>
+            <button type="object" name="_copytst" string="+ Cotiz. Inter." class="oe_highlight" />
+            <button type="object" name="_pastetst" string="+ Cotiz. Cabot" />
+            <button type="object" name="_newtst" string="+ Seguro Canc" />
+          </header>
+        </form>
+      </field>
+    </record>
+  </data>
+</odoo>

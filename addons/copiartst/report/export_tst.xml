@@ -1,0 +1,61 @@
+<odoo>
+<data>
+	<report 
+		id="report_tst"
+		string="Exporta TST para presupuesto"
+		model="copia.tst"
+		report_type="qweb-html"
+		name="copiartst.datos_tst"
+		menu="True"
+		print_report_name="Renglones para pegar en el PNR"
+	/>
+
+
+	<template id="datos_tst" >
+		<t t-call="web.html_container">
+			<t t-foreach="docs" t-as="o">
+			<t t-call="web.internal_layout">				
+			<div class="page" style="font-size:18px">
+				<div class="row">
+					<div class="col-md-12" align="center">
+						<h1>Copia Datos TST </h1>
+						<h3>Exportar datos para hacer presupuesto</h3>
+						<h3>Armar Iniciativa - Pegarlo en un presupuesto nuevo</h3>
+					</div>
+				</div>
+				<div class="row mt8">
+					<div class="col-md-12" >
+						Cía: <span t-field="o.cia" />
+					</div>
+					<div class="col-md-12" >
+						Origen: <span t-field="o.orig" />
+					</div>
+					<div class="col-md-12" >
+						Fechas Salida / Regreso: <span t-field="o.date" />
+					</div>
+					<div class="col-md-12" >
+						Destinos: <span t-field="o.route" />
+					</div>
+					<div class="col-md-12" >
+						Cambio: 1USD=$<span t-field="o.rate" />
+					</div>
+					<div class="col-md-12" >
+						Emitir antes de: <span t-field="o.ltd" />
+					</div>
+					<div class="col-md-12" >
+						Total con impuestos: $<span t-field="o.ttl" /> 
+					</div>
+					<div class="col-md-12" >
+						Retención AFIP: $<span t-field="o.retenc" />
+					</div>
+					<div class="col-md-12" >
+						Equipaje: <span t-field="o.bagage" />
+					</div>
+				</div>
+			</div>
+			</t>
+			</t>
+		</t>
+	</template>
+</data>
+</odoo>
