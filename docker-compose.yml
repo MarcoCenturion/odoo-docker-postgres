@@ -12,7 +12,7 @@ services:
       - odoo-web-data:/var/lib/odoo
       - /srv/odoo/config:/etc/odoo
       - /srv/odoo/addons:/mnt/extra-addons
-      
+  
   db:
     image: postgres:11.1
     container_name: odoo_base
