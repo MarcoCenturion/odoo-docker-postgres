@@ -2,7 +2,7 @@
 <data>
 	<report 
 		id="report_renglon_pnr"
-		string="Exporta Renglon Amadues"
+		string="Exporta Renglon Amadeus"
 		model="pax.data"
 		report_type="qweb-html"
 		name="datospax.renglon_a_amadeus"
@@ -18,7 +18,7 @@
 			<div class="page" style="font-size:18px">
 				<div class="row">
 					<div class="col-md-12" align="center">
-						<h2>Renglon para amadeus </h2>
+						<h1>Renglon para amadeus </h1>
 						<h3>Pintar el renglon siguiente y pintarlo con CTRL+C</h3>
 						<h3>Pegarlo en Amadeus Selling con CTRL+V</h3>
 					</div>
