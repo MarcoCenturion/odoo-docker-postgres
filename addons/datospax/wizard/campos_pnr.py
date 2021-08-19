@@ -11,7 +11,3 @@ class CamposPnr(models.TransientModel):
 	paxs = fields.Many2many("pax.data", 
 		string="Seleccionar Pasajeros", 
 		help="Click sobre los pasajeros a importar")
-
-	def export_data(self):
-		data = {"ids": self.ids,"model": "datos.pax","form": self.read()[0],}
-		return self.env.ref("datospax.view_pax_export_amadeus")

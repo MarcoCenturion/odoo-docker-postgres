@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    image: odoo:14.0
+    image: odoo:13.0
     container_name: odoo_produccion
     restart: always
     depends_on:
@@ -11,13 +11,7 @@ services:
     volumes:
       - odoo-web-data:/var/lib/odoo
       - /srv/odoo/config:/etc/odoo
-<<<<<<< HEAD
       - /srv/odoo/addons:/mnt/extra-addons
-  
-=======
-      - /home/marco/odoo-docker-postgres/addons:/mnt/extra-addons
-      
->>>>>>> e53a4bf484b67ea630c1873fc835fe596f27eac0
   db:
     image: postgres:11.1
     container_name: odoo_base

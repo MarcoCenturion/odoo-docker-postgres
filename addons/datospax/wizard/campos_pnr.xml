@@ -24,8 +24,6 @@
 							class="btn-secondary"
 							special="cancel"/>
 						</footer>
-						<t t-field="pnr.wizard.paxs" />
-						<t t-esc = "surname" />
 				</form>
 			</field>
 		</record>
