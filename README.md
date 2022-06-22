@@ -1,3 +1,5 @@
+[[TOC]]
+
 # odoo-docker-postgres
 
 Crearemos un repositorio donde guardar la configuracion de un dockerfile y docker-compose para levantar contenedores de docker que corran 
@@ -35,12 +37,14 @@ El objetivo es levantar varias instancias en la nube con docker, una en **produc
 
 ---
 
-# Modulos Odoo para Agencias de Viajes / Retail Mayorista y Minorista
+# Modulos Odoo para Agencias de Viajes 
 
-### DatosPax
-### Copia TST
-### Presupuestador
-### Reporteador
+Retail Mayorista y Minorista
+
+- DatosPax
+- Copia TST
+- Presupuestador
+- Reporteador
 
 ---
 
@@ -114,7 +118,7 @@ El objetivo es levantar varias instancias en la nube con docker, una en **produc
 - [ ] Print sale order lines
 `sale_order_line`
 
--[ ] Note
+- [ ] Note
 If you are doing/testing this on the Odoo Shell, then make sure to run the following after the changes to reflect on database:
 `self.env.cr.commit()`
 
@@ -158,9 +162,13 @@ If you are doing/testing this on the Odoo Shell, then make sure to run the follo
 - [ ] Editar en la nube.
 
 ---
+	
+## Sale.order  
 
-## Sale.order  (Mejoras al presupuesto para adaptarlo a agencia de viajes retail)
+(Mejoras al presupuesto para adaptarlo a agencia de viajes retail)
+
 ### Aéreos (30 hs / hechas 10)
+
 ### Terrestre (40 hs / hechas 0)
 
 - Dividir presupuestos por tipos de viajes indexando categorías, para mejorar el ***Revenue Management*** haciendo reglas de MU puntuales y para poder mostrar estadísticas periódicas (no puede mejorarse lo que no puede medirse) y poder enfocarse en lo rentable.  
@@ -190,14 +198,38 @@ If you are doing/testing this on the Odoo Shell, then make sure to run the follo
 
 ## Gantt / Linea del tiempo Presupuesto (20 hs)
 
-Cambio de color cuando se carta el TST automatizado al Presupuesto
+- Cambio de color cuando se carta el TST automatizado al Presupuesto
 
-### Inicio > Cargar TST > Cargar nota > Revisar MU > OK > Enviar por email
+Inicio > Cargar TST > Cargar nota > Revisar MU > OK > Enviar por email
+
+```plantuml
+@startmindmap
+title Flujo Presupuesto 
+!theme amiga
+* Motor Mu  
+ ** Plantilla Condiciones\nGenerales
+  *** Enviar email\nal pax
+  *** Graba actividad CRM 
+   **** ToDo
+
+left side
+** Cargar Nota tarifaria
+** Copiar TST
+*** FXD
+**** Aéreo
+** Copiar
+*** Scrapear\nWeb
+**** Terrestre
+
+legend: Switch Botón\nAéreo - Terrestre 
+@endmindmap
+```
 
 ---
 
+## Motor markup por destinos (10 hs)
 
-## Tablero Destinos (10 hs)
+Segmentar productos / categorías para aplicar reglas de MU.
 
 - [ ] Hacer un tablero de los destinos, con su markup puntual.
 - [ ] Ver rentabilidad por destinos.
@@ -207,18 +239,17 @@ Cambio de color cuando se carta el TST automatizado al Presupuesto
 
 ## Tableros de comando comercial (10 hs)
 
+Armar las vistar de productos, rentabilidad, etc.
+
 - [ ] Rentabilidad promedio por destino, presupuestos por destino
 - [ ] Rentabilidad por Segmento
 - [ ] Ratio conversión 
 
-
 ---
 
 ## Configurar correo viral y plantillas para publicidades masivas (20 hs)
-- [ ] Cuenta en Mailchimp
+
 - [ ] Conectarla a odoo
 - [ ] Diseñar plantillas / Buscar hechas
-
-
 
 
