@@ -3,20 +3,20 @@
     'name': "copiar_tst",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+    Módulo para capturar datos del TST y parsearlos para incluirlos en cotizaciones
+    """
 
     'description': """
-        Long description of module's purpose
+    Copiar de Amadeus el TST de la pantalla y pegarlo en la vista del módulo
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "TH Consultora",
+    'website': "thconsultora.com.ar",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/13.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Tarvel',
+    'category': 'Tarvel','Automatización de procesos'
     'version': '1.0',
 
     # any module necessary for this one to work correctly
