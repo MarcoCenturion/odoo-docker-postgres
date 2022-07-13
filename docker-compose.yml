@@ -9,9 +9,9 @@ services:
     ports:
       - "8069:8069"
     volumes:
-      - odoo-web-data:/var/lib/odoo
-      - /srv/odoo/config:/etc/odoo
-      - /srv/odoo/addons:/mnt/extra-addons
+      - ~odoo-web-data:/var/lib/odoo
+      - ~odoo-web-data:/etc/odoo
+      - ~odoo-web-data:/mnt/extra-addons
   db:
     image: postgres:11.1
     container_name: odoo_base
@@ -24,7 +24,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - odoo-db-data:/var/lib/postgresql/data
+      - ~odoo-db-data:/var/lib/postgresql/data
   
   pgadmin:
     image: dpage/pgadmin4:4.25
