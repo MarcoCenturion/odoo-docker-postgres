@@ -28,12 +28,12 @@ El objetivo es levantar varias instancias en la nube con docker, una en **produc
 |Accion|Comando|
 |--|--:|
 |**Arrancar los contenedores** | Correr esto en el mismo directorio donde está el archivo docker-compose.yml docker-compose up -d (para que corra en segundo plano)|
-| **Detener los contenedores** | docker-compose down |
-| **Restart** | docker-compose restart |
-| **Entrar a la linea de comandos del contenedor** | docker exec -it u roo odoo-db-data bash | 
-| **Listar las imágenes** | docker image ls |
-| **Ver los contenedores corriendo** | docker stats |
-| **Ver los contenedores activos** | docker ps |
+| **Detener los contenedores** | `docker-compose down` |
+| **Restart** | `docker-compose restart` |
+| **Entrar a la linea de comandos del contenedor** | `docker exec -it u roo odoo-db-data /bin/bash` | 
+| **Listar las imágenes** | `docker image ls` |
+| **Ver los contenedores corriendo** | `docker stats` |
+| **Ver los contenedores activos** | `docker ps` |
 
 ---
 
@@ -41,11 +41,11 @@ El objetivo es levantar varias instancias en la nube con docker, una en **produc
 
 Retail Mayorista y Minorista
 
-- DatosPax
+- DatosPax -cambiar la lógica por pasajeros-
 - Copia TST
 - Presupuestador
 - Reporteador
-
+- Alertas por email y SMS
 ---
 
 ## Módulo DatosPax (40 hs. desarrollo / Realizadas 10)
@@ -64,13 +64,16 @@ Retail Mayorista y Minorista
 - Automatiza tareas repetitivas evita errores de tipeo.  reduce costos por **ADM'S**
 - [ ] Genera un Renglón para pegar en Amadeus con los campos para el PNR con los campos `NM, AP, TK, SRDOCS, OS, SR FQTV y RM{nrocliente}` (En desarrollo)
 - [ ] Ciclo for que enumera los pasajeros y pega ese valor en `/p{valor}`
-- [x] Alertas de **Vencimientos** de pasaporte o Visas **(OK)** como TIME LIMIT en el `Formulario` y en el `Calendario`
+- [x] Alertas de **Vencimientos** de pasaporte o Visas **(OK)** como TIME LIMIT en el `Formulario` y en el `Calendario` 
+- [ ] Agregar vista calendario `Salidas` y `vencimiento de señas`
+- [ ] Módulo disparador de alertas al usuario, a los seguidores del file y al pasajero.
+
 ![Vto Pasaporte y Visa USA](/Static/datospax4.jpg "Formulario de Carga")
 
 
 ![Vista Calendario VTO Pass ](/Static/datospax5.jpg "Calendario Vencimientos")
 
-- [ ] Segmentador de público.
+- [ ] Segmentador de público -por etiquetas-
 - [x] Genera **RM** con datos para el backoffice y automatizar la facturación.
 - [x] Vinculación `Many2one` a un contacto en `res.partner`.
 - [x] Agrega calidad al proceso de generación de un PNR al incluir `FrequentFlyer FFR`, `SRFOID`. Contacto automatizado en el PNR con `OSICTC` servicios especiales `SSR`, Documentación obligatoria para ciertas cias/destinos `SRDOCS`, etc. Al no omitir detalles que hacen a la *agencia boutique* 
