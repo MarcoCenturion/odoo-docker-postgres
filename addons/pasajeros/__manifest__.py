@@ -3,15 +3,14 @@
     'name': "pasajeros",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
-
+        Datos necesarios para convertir los contactos en pasajeros
+        Dni, pasaporte, vencimiento, pasajero frecuente, etc
     'description': """
         Long description of module's purpose
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Turismo y Hotelería Consultora",
+    'website': "https://thconsultora.com.ar",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
@@ -20,7 +19,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','res.partner'],
 
     # always loaded
     'data': [
