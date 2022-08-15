@@ -42,4 +42,4 @@ services:
 volumes:
   odoo-web-data:
   odoo-db-data:
-  odoo-nginx-data:
+    #  odoo-nginx-data:
