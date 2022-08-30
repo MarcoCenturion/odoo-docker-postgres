@@ -6,19 +6,16 @@ from odoo import models, fields, api
 class Copiatst(models.Model):
 	_name = 'copia.tst'
 	_description = 'Captura los datos del TST'
-	
 
 	@api.depends('tst_amadeus')
 	def _orig(self):
 		if self.tst_amadeus:
 			self.orig=re.findall('\n (\w{3})\n', self.tst_amadeus)[0]
 
-
 	@api.depends('tst_amadeus')
 	def _route(self):
 		if self.tst_amadeus:
 			self.route=re.findall('\n \w{3}\v \w{3} \w{2}\n\w|\n([ |X]\w{3} ..)', self.tst_amadeus)
-
 
 	@api.depends('tst_amadeus')
 	def _fare_ars(self):
@@ -79,4 +76,3 @@ class Copiatst(models.Model):
 	cia = fields.Char('Cía Aérea', compute='_cia', store=True)
 	rate = fields.Char('Cambio Amadeus', compute='_rate', store=True)
 	line_air = fields.Many2many('sale.order','order_line', 'Agregar Vuelos')
-

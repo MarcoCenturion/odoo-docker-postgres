@@ -1,8 +1,6 @@
 import re
 tst_amadeus = '''
 
-
-
 FXR
 
 01 CENTURION/JULIE*
