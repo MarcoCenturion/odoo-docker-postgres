@@ -6,21 +6,18 @@
         Datos necesarios para convertir los contactos en pasajeros
         Dni, pasaporte, vencimiento, pasajero frecuente, etc
     'description': """
-        Este módulo está diseñado para agregar datos que serán imprescindibles para la gestión personal de los pasajeros
-        - Datos personales para viajes -pasaportes, documentos, carnets, vacunas-
-        - Datos comerciales preferencias, club de millaje, 
-        - Vencimientos de pasaportes, visas, tarjetas de crédito, vacunaciones
-        - Contactos para agregar automaticamente en los PNRS y files
-    """,
+        This module was created to add pax data to the res.partner  
+        - Personal data like passports, documents, vacinations, etc. 
+        - Seat preferencies, meal pref. frequent flyer clubs, etc. 
+        - Time limit of passports, visas, vac, etc.
+        - Automatic taking this data from ODOO to the PNR in Amadeus or Sabre.I
+        """,
 
     'author': "Turismo y Hotelería Consultora",
     'website': "https://thconsultora.com.ar",
 
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
     'category': 'Travel',
-    'version': '0.1',
+    'version': '1.0',
 
     # any module necessary for this one to work correctly
     'depends': ['base','res.partner'],
@@ -34,5 +31,5 @@
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
-    ],
+        ],
 }

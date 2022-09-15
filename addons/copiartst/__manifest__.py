@@ -3,11 +3,14 @@
     'name': "copiar_tst",
 
     'summary': """
-    Módulo para capturar datos del TST y parsearlos para incluirlos en cotizaciones
+    app to paste the TST into the FILE.
     """
 
-    'description': """
-    Copiar de Amadeus el TST de la pantalla y pegarlo en la vista del módulo
+    'description': """ 
+        This Module will take the variables of the clipboard and paste into the sales.form 
+        to do quality tasks, closing forms to the final user.
+        Taking LAST TICKET DAY, fare, taxs, baggage allowance, rate. etc.
+
     """,
 
     'author': "TH Consultora",
@@ -20,7 +23,7 @@
     'version': '1.0',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','sale','sale_management'],
+    'depends': ['base','sale','sale_management'], 
 
     # always loaded
     'data': [
@@ -35,4 +38,4 @@
     'demo': [
        'demo/demo.xml',
     ],
-}
+    }
