@@ -40,7 +40,7 @@ class Copiatst(models.Model):
 	@api.depends('tst_amadeus')
 	def _retenc(self):
 		if self.tst_amadeus:
-			self.retenc=re.findall('(\d{1,6}.\d{2})-Q1', self.tst_amadeus)[0]
+			self.retenc=re.findall('(\d{1,6}.\d{2})(Q1|-Q1)', self.tst_amadeus)[0]
 
 	@api.depends('tst_amadeus')
 	def _ltd(self):
@@ -50,7 +50,7 @@ class Copiatst(models.Model):
 	@api.depends('tst_amadeus')
 	def _bagage(self):
 		if self.tst_amadeus:
-			self.bagage=re.findall('(0P|20|30|32|2B|PC|1P|2P)\n', self.tst_amadeus)
+			self.bagage=re.findall('(0P|20|30|32|2B|PC|1P|2P|3P)\n', self.tst_amadeus)
 
 	@api.depends('tst_amadeus')
 	def _cia(self):

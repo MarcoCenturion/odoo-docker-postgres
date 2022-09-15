@@ -44,8 +44,8 @@ print("--------------------------------------------------------------")
 
 print("Cía Emisora ",cia,"\nRuta ",orig, " ", route,"\nUltimo día para emitir",ltd,"\nEquipaje ",bagage,"\nA recuperar en AFIP ARS ",retenc,"\nTotal c/tax ",float(ttl)+float(fee))
 total=float(ttl)+float(fee)
-print(f'Cía Emisora {cia}\nRuta {orig} {route} \nUltimo día para emitir {ltd} \nEquipaje {bagage} \nA recuperar en AFIP ARS {retenc} \nTotal c/tax {total}')
+print(f'Cía Emisora {cia}\nRuta {orig} {route} \nUltimo día para emitir {ltd} \nEquipaje {bagage} \nA recuperar en AFIP ARS {retenc} por pasajero \nTotal c/tax {total}')
 
 
-clip.copy(f'Cía Emisora {cia}\nRuta {orig} {route} \nUltimo día para emitir {ltd} \nEquipaje {bagage} \nA recuperar en AFIP ARS {retenc} \nTotal c/tax {total}')
+clip.copy(f'Cía Emisora {cia}\nRuta {orig} {route} \nUltimo día para emitir {ltd} \nEquipaje {bagage} \nA recuperar en AFIP ARS {retenc} por pasajero\nTotal c/tax {total}')
 
