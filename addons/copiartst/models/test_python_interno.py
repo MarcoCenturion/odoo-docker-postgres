@@ -5,14 +5,14 @@ tst_amadeus = clip.paste()
 
 print(tst_amadeus)
 
-cia = re.findall('\n \w{3}\v \w{3} \w{2}\n\w|\n([ |X]\w{3} ..)', tst_amadeus)
-cambio =re.findall(r'1USD=(......)', tst_amadeus)[0]
+cia = re.findall('BG CXR: (..) |CARRIER (..)', tst_amadeus)
+cambio =re.findall('1USD=(......)', tst_amadeus)
 route=re.findall('\n \w{3}\v \w{3} \w{2}\n\w|\n([ |X]\w{3} ..)', tst_amadeus)
 orig=re.findall('\n (\w{3})\n', tst_amadeus)[0]
 fare_ars=re.findall('\nARS(\D{0,3}\d{1,6}.\d{2})', tst_amadeus)[0]
-bagage=re.findall('(0P|20|30|32|2B|PC|1P|2P)\n', tst_amadeus)
+bagage=re.findall('(0P|20|30|32|2B|PC|1P|2P|3P)\n', tst_amadeus)
 ltd=re.findall('(DTE \d{2}\D{3}\d{2}/\d{2}:\d{2}|DTE \d{2}\D{3}\d{2})', tst_amadeus)[0]
-retenc=re.findall('(\d{1,6}.\d{2})-(Q1|-Q1)', tst_amadeus)[0]
+retenc=re.findall('(\d{1,6}.\d{2})(Q1|-Q1)', tst_amadeus)[0]
 date=re.findall(r'(?:[ |*][A-Z]{1}.)((?:\d{2}\D{3} ))', tst_amadeus)
 fare_usd=re.findall('USD(\D{0,6}\d{1,6}.\d{2}) ', tst_amadeus)[0]
 ttl=re.findall('\n(ARS|AR|ARS )(\d{1,7}.\d{2})', tst_amadeus)[-1][-1]
@@ -41,3 +41,11 @@ print("Tipo de cambio 1USD = ARS",cambio)
 print("--------------------------------------------------------------")
 print("Total con impuestos ARS ",float(ttl)+float(fee))
 print("--------------------------------------------------------------")
+
+print("Cía Emisora ",cia,"\nRuta ",orig, " ", route,"\nUltimo día para emitir",ltd,"\nEquipaje ",bagage,"\nA recuperar en AFIP ARS ",retenc,"\nTotal c/tax ",float(ttl)+float(fee))
+total=float(ttl)+float(fee)
+print(f'Cía Emisora {cia}\nRuta {orig} {route} \nUltimo día para emitir {ltd} \nEquipaje {bagage} \nA recuperar en AFIP ARS {retenc} \nTotal c/tax {total}')
+
+
+clip.copy(f'Cía Emisora {cia}\nRuta {orig} {route} \nUltimo día para emitir {ltd} \nEquipaje {bagage} \nA recuperar en AFIP ARS {retenc} \nTotal c/tax {total}')
+
