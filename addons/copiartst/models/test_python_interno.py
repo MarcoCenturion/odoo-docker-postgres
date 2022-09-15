@@ -1,62 +1,43 @@
 import re
-tst_amadeus = '''
+import pyperclip as clip
+fee = input("definir fee en ARS ")
+tst_amadeus = clip.paste()
 
-FXR
+print(tst_amadeus)
 
-01 CENTURION/JULIE*
-ITINERARY REBOOKED
-LAST TKT DTE 02AUG21/23:59 LT in POS - SEE ADV PURCHASE
-------------------------------------------------------------
-     AL FLGT  BK T DATE  TIME  FARE BASIS      NVB  NVA   BG
- BUE
- MIA AA   900 Y *Y 01SEP 2050  Y                          1P
- NYC AA   309 V *V 12SEP 0608  V0AHZNN1                   1P
- LAX AA     1 G  G 20SEP 0800  G7AKZNN1                   1P
- LAS      S U R F A C E
-XMIA AA   659 Y *Y 03OCT 0015  Y                          1P
- BUE AA   931 Y *Y 03OCT 2045  Y                          1P
-
-USD  6193.00      01SEP21BUE AA MIA Q150.00 2765.00AA NYC
-ARS630138.00      161.86AA LAX200.93/-LAS AA X/MIA AA BUE Q
-ARS 44109.70-AR   150.00 M2765.00NUC6192.79END ROE1.000000
-ARS189041.40-O5   XT ARS 220548.30-Q1 ARS 1017.50-QO ARS
-ARS235388.60-XT   814.00-TQ ARS 5799.80-XR ARS 1139.60-AY
-AR1098677.70      ARS 1943.40-US ARS 1943.40-US ARS 402.90
->                                                 PAGE  2/ 3
-
->
-
-m
-
-                  -XA ARS 712.30-XY ARS 609.50-YC ARS 457.90                    
-                  -XF MIA4.50                                                   
-RATE USED 1USD=101.75000ARS                                                     
-FARE FAMILIES:    (ENTER FQFN FOR DETAILS, FXY FOR UPSELL)                      
-FARE FAMILY:FC1:1:MAINFL                                                        
-FARE FAMILY:FC2:5-6:MAINFL                                                      
-FARE FAMILY:FC3:2:MAIN                                                          
-FARE FAMILY:FC4:3:MAIN                                                          
-FXU/TS TO UPSELL MAINFL-MAINFL-MAINFL-MAIN* FOR 238362.80ARS                    
-BG CXR: AA                                                                      
-PRICED WITH VALIDATING CARRIER AA - REPRICE IF DIFFERENT VC                     
-FARE VALID FOR E TICKET ONLY                                                    
-TICKETS ARE NON-REFUNDABLE                                                      
-ENDOS /C2-3 NONREF/FAREDIF/ CXL BY FLT TIME OR NOVALUE -BG:A                    
-      A                                                                         
-ATTN                  ***                                                       
->                                                 PAGE  3/ 3                    
-                                                                                
+cia = re.findall('\n \w{3}\v \w{3} \w{2}\n\w|\n([ |X]\w{3} ..)', tst_amadeus)
+cambio =re.findall(r'1USD=(......)', tst_amadeus)[0]
+route=re.findall('\n \w{3}\v \w{3} \w{2}\n\w|\n([ |X]\w{3} ..)', tst_amadeus)
+orig=re.findall('\n (\w{3})\n', tst_amadeus)[0]
+fare_ars=re.findall('\nARS(\D{0,3}\d{1,6}.\d{2})', tst_amadeus)[0]
+bagage=re.findall('(0P|20|30|32|2B|PC|1P|2P)\n', tst_amadeus)
+ltd=re.findall('(DTE \d{2}\D{3}\d{2}/\d{2}:\d{2}|DTE \d{2}\D{3}\d{2})', tst_amadeus)[0]
+retenc=re.findall('(\d{1,6}.\d{2})-(Q1|-Q1)', tst_amadeus)[0]
+date=re.findall(r'(?:[ |*][A-Z]{1}.)((?:\d{2}\D{3} ))', tst_amadeus)
+fare_usd=re.findall('USD(\D{0,6}\d{1,6}.\d{2}) ', tst_amadeus)[0]
+ttl=re.findall('\n(ARS|AR|ARS )(\d{1,7}.\d{2})', tst_amadeus)[-1][-1]
 
 
-                                                                                
-'''
-rate = re.findall('\n \w{3}\v \w{3} \w{2}\n\w|\n([ |X]\w{3} ..)', tst_amadeus)
-
-print(rate)
-
-rate=list(rate)
-print(rate)
-for i in rate:
+cia=list(cia)
+#print(cia)
+for i in cia:
      if i != '':
-          rate = i
-          print(rate)
+          cia = i
+
+# convertir a entero ttl y fee y sumarlos
+final = float(ttl)+float(fee)
+
+print("Cotización aéreo")
+print("--------------------------------------------------------------")
+print("Ruta completa",route)
+print("Origen",orig)
+print("Tarifa en pesos ARS",fare_ars)
+print("Equipaje permitido ",bagage)
+print("Ultimo día para emitir",ltd)
+print("Retención Ganancias ARS",retenc)
+print("Tarifa orifinal USD",fare_usd)
+print("Cia aérea emisora ",cia)
+print("Tipo de cambio 1USD = ARS",cambio)
+print("--------------------------------------------------------------")
+print("Total con impuestos ARS ",float(ttl)+float(fee))
+print("--------------------------------------------------------------")
