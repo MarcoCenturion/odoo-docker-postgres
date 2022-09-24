@@ -1,6 +1,8 @@
 import re
 import pyperclip as clip
-fee = input("Definir fee en usd (oficial): ")
+#fee = '100'
+fee = input("\n-------------------------------------\nDefinir fee en USD oficial, por defecto es 100: ")
+
 tst_amadeus = clip.paste()
 retenc = [0]
 
@@ -20,15 +22,16 @@ fare_usd=re.findall('USD(\D{0,6}\d{1,6}.\d{2}) ', tst_amadeus)[0]
 ttl=re.findall('\n(ARS|AR|ARS )(\d{1,7}.\d{2})', tst_amadeus)[-1][-1]
 
 
-renglon = []
+tramo=[]
 for renglon in route:
-    print(renglon)
-
+    #tramo.append(renglon[5:12],renglon[14:20],renglon[22:29],renglon[34:44])
+    tramo.append(renglon)
 
 total=float(ttl)+(float(fee)*float(str(cambio[0])))
 
 # Caso tkt internacional
-texto =(f'INTERNACIONAL\n---------------------------\n* Cía Emisora: {str(cia)}\n* Origen: {str(orig)}\n* Ruta: {str(route)}\n* Ultimo día para emitir: {str(ltd)}\n* Equipaje incluido: {str(bagage)}\n* Tipo de Cambio oricial {str(cambio)}\n* Anticipo ganancias a recuperar en AFIP ARS: {str(retenc)} por pasajero \n* Total con impuestos ARS: {str(total)}\n----------------------------') 
+texto =(f'INTERNACIONAL\n---------------------------\n* Cía Emisora: {str(cia)}\n* Origen: {str(orig)}\n* Tramos: \n{str(tramo)}\n* Ultimo día para emitir: {str(ltd)}\n* Equipaje incluido: {str(bagage)}\n* Tipo de Cambio oricial {str(cambio)}\n* Anticipo ganancias a recuperar en AFIP ARS: {str(retenc)} por pasajero \n* Total con impuestos ARS: {str(total)}\n----------------------------') 
 
 print(texto)
 clip.copy(texto)
+
