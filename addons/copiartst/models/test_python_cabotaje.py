@@ -5,9 +5,8 @@ fee = 4000
 fee = input("\n-------------------------------------\nDefinir fee en ARS oficial\nPor defecto es ARS4000: ")
 
 tst_amadeus = clip.paste() #importar el contenido de amades
-retenc = [0] #lista vacia de la retención Q1
-
 tst = tst_amadeus.splitlines()
+
 cia = re.findall('BG CXR: (..) |CARRIER (..)', tst_amadeus)#[0]
 cambio=re.findall('1USD=(......)', tst_amadeus)
 route = re.findall(r'^\s{2}\d{1}\s{2}\w{2}.{53}',tst_amadeus, flags=re.M)
@@ -18,8 +17,6 @@ ltd = re.findall('(DTE \d{2}\D{3}\d{2}/\d{2}:\d{2}|DTE \d{2}\D{3}\d{2})', tst_am
 date = re.findall(r'(?:[ |*][A-Z]{1}.)((?:\d{2}\D{3} ))', tst_amadeus)
 ttl = re.findall('\n(ARS|AR|ARS )(\d{1,7}.\d{2})', tst_amadeus)[-1][-1]
 ref = re.findall('\n(NONREF|NONEND|NON-END|NON-REF)', tst_amadeus)
-retenc = re.findall('(\d{0,6}.\d{2})(Q1 |-Q1 )', tst_amadeus)[0]
-fare_usd = re.findall('USD(\D{0,6}\d{1,6}.\d{2}) ', tst_amadeus)[0]
 
 '''
 Definir funcion que recorra toda la lista route y arme una sola linea
@@ -52,7 +49,7 @@ def totalizar():
 total=float(ttl)+float(fee)
 
 # Caso tkt internacional
-texto =(f'Cotización Internacional:\n---------------------------\n* Cía Emisora: {str(cia)}\n* Origen: {str(orig)}\n* Cia/Vuelo|Fecha|Tramo|Sale|Llega: \n\n{str(tramos)}\n\n* Ultimo día para emitir: {str(ltd)}\n* Equipaje incluido: {str(bagage)}\n* Tipo de Cambio oficial {str(cambio)}\n* Anticipo ganancias a recuperar en AFIP ARS: {str(retenc)} por pasajero \n* Total con impuestos ARS: {str(total)}\n * Endosos y Devoluciones: {ref}\n----------------------------') 
+texto =(f'Cotización Internacional:\n---------------------------\n* Cía Emisora: {str(cia)}\n* Origen: {str(orig)}\n* Cia/Vuelo|Fecha|Tramo|Sale|Llega: \n\n{str(tramos)}\n\n* Ultimo día para emitir: {str(ltd)}\n* Equipaje incluido: {str(bagage)}\n* Total con impuestos ARS: {str(total)}\n * Endosos y Devoluciones: {ref}\n----------------------------') 
 
 print(texto)
 clip.copy(texto)
