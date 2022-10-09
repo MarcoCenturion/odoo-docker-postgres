@@ -12,7 +12,7 @@ cambio=re.findall('1USD=(......)', tst_amadeus)
 route = re.findall(r'^\s{2}\d{1}\s{2}\w{2}.{53}',tst_amadeus, flags=re.M)
 orig = re.findall('\n (\w{3})\n', tst_amadeus)[0]
 fare_ars = re.findall('\nARS(\D{0,3}\d{1,6}.\d{2})', tst_amadeus)[0]
-bagage = re.findall('(0P|20|30|32|2B|PC|1P|2P|3P)\n', tst_amadeus)
+bagage = re.findall(' (0P|20|30|32|2B|PC|1P|2P|3P)\n', tst_amadeus)
 ltd = re.findall('(DTE \d{2}\D{3}\d{2}/\d{2}:\d{2}|DTE \d{2}\D{3}\d{2})', tst_amadeus)[0]
 date = re.findall(r'(?:[ |*][A-Z]{1}.)((?:\d{2}\D{3} ))', tst_amadeus)
 ttl = re.findall('\n(ARS|AR|ARS )(\d{1,7}.\d{2})', tst_amadeus)[-1][-1]
@@ -49,7 +49,7 @@ def totalizar():
 total=float(ttl)+float(fee)
 
 # Caso tkt internacional
-texto =(f'Cotización Internacional:\n---------------------------\n* Cía Emisora: {str(cia)}\n* Origen: {str(orig)}\n* Cia/Vuelo|Fecha|Tramo|Sale|Llega: \n\n{str(tramos)}\n\n* Ultimo día para emitir: {str(ltd)}\n* Equipaje incluido: {str(bagage)}\n* Total con impuestos ARS: {str(total)}\n * Endosos y Devoluciones: {ref}\n----------------------------') 
+texto =(f'Cotización Cabotaje:\n---------------------------\n* Cía Emisora: {str(cia)}\n* Origen: {str(orig)}\n* Cia/Vuelo|Fecha|Tramo|Sale|Llega: \n\n{str(tramos)}\n\n* Ultimo día para emitir: {str(ltd)}\n* Equipaje incluido: {str(bagage)}\n* Total con impuestos ARS: {str(total)}\n* Endosos y Devoluciones: {ref}\n----------------------------') 
 
 print(texto)
 clip.copy(texto)
