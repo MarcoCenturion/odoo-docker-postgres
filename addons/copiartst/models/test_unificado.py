@@ -18,10 +18,7 @@ date = re.findall(r'(?:[ |*][A-Z]{1}.)((?:\d{2}\D{3} ))', tst_amadeus)
 ttl = re.findall('\n(ARS|AR|ARS )(\d{1,7}.\d{2})', tst_amadeus)[-1][-1]
 ref = re.findall('\n(NONREF|NONEND|NON-END|NON-REF)', tst_amadeus)
 
-'''
-Definir funcion que recorra toda la lista route y arme una sola linea
-compuesta por CIA VUELO TRAMO FECHA EQUIPO
-'''
+
 
 tramo=[]
 contador = len(route)
@@ -35,16 +32,6 @@ for renglon in route:
 tramos="\n".join(tramo)
 
 
-'''Funicion para aplicar markup selectivo
-INCOMPLETO
-def totalizar():
-    if cambio=re.findall('1USD=(......)', tst_amadeus) == True():
-        total=float(ttl)+(float(fee)*float(str(cambio[0])))
-    elif:
-        input("Definir tipo de cambio oficial" :,cambio)
-'''
-#
-#total=float(ttl)+(float(fee)*float(str(cambio[0])))
 
 total=float(ttl)+float(fee)
 
@@ -53,3 +40,4 @@ texto =(f'Cotización Cabotaje:\n---------------------------\n* Cía Emisora: {s
 
 print(texto)
 clip.copy(texto)
+
