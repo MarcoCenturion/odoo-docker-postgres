@@ -1,4 +1,4 @@
-import re
+
 import pyperclip as clip
 fee = 4000
 

@@ -31,6 +31,8 @@ def parsearequipaje():
     bagage = re.findall('(0P|20|30|32|2B|PC|1P|2P|3P)\n', tst_amadeus)
     return bagage
 def parsearltd():    
+
+    
     ltd = re.findall('(DTE \d{2}\D{3}\d{2}/\d{2}:\d{2}|DTE \d{2}\D{3}\d{2})', tst_amadeus)[0]
     return ltd
 def parseardate():
