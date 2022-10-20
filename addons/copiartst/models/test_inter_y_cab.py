@@ -31,8 +31,6 @@ def parsearequipaje():
     bagage = re.findall('(0P|20|30|32|2B|PC|1P|2P|3P)\n', tst_amadeus)
     return bagage
 def parsearltd():    
-
-    
     ltd = re.findall('(DTE \d{2}\D{3}\d{2}/\d{2}:\d{2}|DTE \d{2}\D{3}\d{2})', tst_amadeus)[0]
     return ltd
 def parseardate():
@@ -45,7 +43,7 @@ def parsearendoso():
     ref = re.findall('\n(NONREF|NONEND|NON-END|NON-REF)', tst_amadeus)
     return ref
 def parsearretenc():
-    retenc = re.findall('(\d{0,6}.\d{2})(Q1 |-Q1 )', tst_amadeus)[0]
+    retenc = re.findall('(\d{0,6}.\d{2})(Q1 |-Q1 |Q1)', tst_amadeus)[0]
     return retenc
 def parsearcambio():
     cambio=re.findall('1USD=(......)', tst_amadeus)
@@ -81,7 +79,7 @@ while True: #Comienzo del bucle infinito para el programa
        copia()
    elif inter == 2:
        tst_amadeus = clip.paste() # Importar el contenido de Amadeus
-       texto =(f'Cotización Internacional:\n---------------------------\n* Cía Emisora: {parsearcia()}\n* Cia/Vuelo|Fecha|Tramo|Sale|Llega: \n\n{parsearruta()}\n\n* Ultimo día para emitir: {parsearltd()}\n* Equipaje incluido: {parsearequipaje()}\n* Tipo de Cambio oficial {parsearcambio()}\n* Anticipo ganancias a recuperar en AFIP ARS: {parsearfare()} por pasajero \n* Total con impuestos ARS: {totalizar()}\n* Endosos y Devoluciones: {parsearendoso()}\n----------------------------')
+       texto =(f'Cotización Internacional:\n---------------------------\n* Cía Emisora: {parsearcia()}\n* Cia/Vuelo|Fecha|Tramo|Sale|Llega: \n\n{parsearruta()}\n\n* Ultimo día para emitir: {parsearltd()}\n* Equipaje incluido: {parsearequipaje()}\n* Tipo de Cambio oficial {parsearcambio()}\n* Anticipo ganancias a recuperar en AFIP ARS: {parsearretenc()} por pasajero \n* Total con impuestos ARS: {totalizar()}\n* Endosos y Devoluciones: {parsearendoso()}\n----------------------------')
        copia()
    elif inter == 3:
        fee = input("\n-------------------------------------\nDefinir fee en ARS oficial\nPor defecto es ARS4000: ")
