@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_pasajeros_pasajeros,pasajeros.pasajeros,model_pasajeros_pasajeros,base.group_user,1,1,1,1
+access_passengers_passengers,passengers.passengers,model_passengers_passengers,base.group_user,1,1,1,1
