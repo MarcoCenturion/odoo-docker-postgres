@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "pasajeros",
+    'name': "Passengers",
 
     'summary': """
         Datos necesarios para convertir los contactos en pasajeros
@@ -16,7 +16,7 @@
     'author': "Turismo y Hotelería Consultora",
     'website': "https://thconsultora.com.ar",
 
-    'category': 'Travel',
+    'category': 'Travel Agencies and Tour Operator',
     'version': '1.0',
 
     # any module necessary for this one to work correctly
@@ -25,8 +25,7 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'views/passengers.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
