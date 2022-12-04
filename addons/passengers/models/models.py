@@ -2,7 +2,7 @@
 
 from odoo import models, fields, api
 
-class PaxData(models.Model):
+class passengers(models.Model):
 	_inherit = res.partner
     _description = 'Aditional Passanger Data for the
     normal travel agy flow'

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Passengers",
+    'name': "passengers",
 
     'summary': """
         Datos necesarios para convertir los contactos en pasajeros
