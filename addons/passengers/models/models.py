@@ -4,12 +4,11 @@ from odoo import models, fields, api
 
 class passengers(models.Model):
 	_inherit = res.partner
-    _description = 'Aditional Passanger Data for the
-    normal travel agy flow'
+    _description = 'Aditional Passanger Data for the normal travel agy flow'
 	
 	dob = fields.Date(String='Date of Birth')
 	document = fields.Char(String='Número de DNI', size = 30, index=True)
-	passport = fields.Char(String='Número de Pasaporte', size = 30)
+    passport = fields.Char(String='Número de Pasaporte', size = 30)
 	pass_tl = fields.Date(String='Vencimiento del Pasaporte')
 	visa_us_tl = fields.Date(String='Vencimiento visa Usa')
 	ff1 = fields.Char(String='Frequent Flier 1:', size = 30, index=True)
