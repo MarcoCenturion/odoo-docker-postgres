@@ -3,7 +3,7 @@
     'name': "Passenger data for travel agencies and tour operators",
 
     'summary': """
-    Aditional data 
+    Aditional data for normal flows, admin, sales, marketing, etc.
     """,
 
     'description': """
@@ -26,9 +26,5 @@
     'data': [
         # 'security/ir.model.access.csv',
         'views/passengers.xml',
-    ],
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
     ],
 }

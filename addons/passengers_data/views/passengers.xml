@@ -1,21 +1,25 @@
 <odoo>
   <data noupdate="0">
-  <record id="view">
+  <record id="view_res_partner_additional_data" model="ir.ui.view">
 	  <field name="model">res.partner.aditional.data</field>
 	  <field name="model">res.partner</field>
 	  <field name="inherit_id" ref="base.view_partner_form"/>
-	  <field name="arch" type=xml>
+	  <field name="arch" type="xml">
 		  <field name="category_id" position="after">
 			  <field name="dob"/>
-			  <field name="document"/>
-			  <field name="passport"/>
-			  <field name="pas_tl"/>
+			  <field name="document" widget="char" placeholder="DNI, Cedula, etc." />
+			  <field name="passport" widget="char" placeholder="AA43234222" />
+			  <field name="pass_tl" />
 			  <field name="visa_us_tl"/>
-			  <field name="visa_us_image"/>
+			  <field name="visa_us_image" placeholder="Subir imágen de la VISA DE USA no mas de 1M jpg o png"  />
 			  <field name="ff1"/>
 			  <field name="ff2"/>
-			  <field name="passanger_image"/>
-			  <field name="doc_image"/>
-			  <field name="note"/>
-  </data>
+			  <field name="passanger_image" placeholder="Subir imágen del pasaporte de no mas de 1M jpg o png" />
+			  <field name="doc_image" placeholder="Subir imágen del DNI de no mas de 1M jpg o png" />
+			  <field name="note" widget="char" placeholder="Notas sobre el pasajero, comidas habituales, preferencias, etc." />
+		 </field>
+
+	 </field>
+ </record>
+ </data>
 </odoo>
