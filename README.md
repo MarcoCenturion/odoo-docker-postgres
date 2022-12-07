@@ -11,14 +11,15 @@ Crearemos un repositorio donde guardar la configuracion de un dockerfile y docke
 
 El objetivo es levantar varias instancias en la nube con docker, una en **producción**, otra en **testing**, otra solo de postgres y una última con todos los backups.  Tener el mínimo off line posible.
 
-*Revisar SublimeText para editar en la nube!*
+- [ ] nvim en servidor remoto
 
 ---
 
 ## Pasos en PC local
 
-- [ ] Correr `systemctl start docker`
-- [ ] Primer paso, crear el archivo `docker-compose.yml`
+- [ ] Primer paso, crear carpetas para configuracion odoo y para los addons.
+- [ ] Segundo paso, crear el archivo `docker-compose.yml` 
+- [ ] Correr `systemctl start docker` para levantar el sistema
 - [ ] Guardar el `odoo.conf` en la ruta del volumen del contenedor
 - [ ] Guardar el archivo `nginx.conf` idem
 - [x] Persistir los datos en los volúmenes
@@ -44,26 +45,27 @@ Retail Mayorista y Minorista
 
 - Passenger_data -Agrega a res.partner la lógica por pasajeros-
 - Copia TST
-- Presupuestador
+- Presupuestador - Crear plantillas de presupuestos
 - Reporteador
-- Alertas por email y SMS
+- Alertas por email y SMS (configuración de servicios de email)
 - Lógica del file costos vs. ventas
 
 ---
 
-## Módulo Passenger_data (40 hs. desarrollo / Realizadas 10)
+## Módulo passenger_data (40 hs. desarrollo / Realizadas 16)
 
+- [ ] Armar flujo de proyecto en TH consultora y seguir esto.
 - [x] Datos Adicionales al pasajero en res.partner **(OK)**.
 - [x] Agregar imágenes y verlas en la vista **(OK)**.
-- [ ] Mejorar vista datos*.
-- [x] ABM pasajeros. **(OK)**
-- [x] Captura datos del pasajero **Odoo2Amadeus** / **Amadeus2Odoo** 
-- Automatiza tareas repetitivas evita errores de tipeo.  reduce costos por **ADM'S**
+- [ ] Mejorar vista datos.
+- [ ] ABM pasajeros. **(OK)**.
+- [ ] Captura datos del pasajero **Odoo2Amadeus** / **Amadeus2Odoo** 
+- [ ] Automatiza tareas repetitivas evita errores de tipeo.  reduce costos por **ADM'S**
 - [ ] Genera un Renglón para pegar en Amadeus con los campos para el PNR con los campos `NM, AP, TK, SRDOCS, OS, SR FQTV y RM{nrocliente}` (En desarrollo)
 - [ ] Ciclo for que enumera los pasajeros y pega ese valor en `/p{valor}`
 - [x] Alertas de **Vencimientos** de pasaporte o Visas **(OK)** como TIME LIMIT en el `Formulario` y en el `Calendario` 
 - [ ] Agregar vista calendario `Salidas` y `vencimiento de señas`
-- [ ] Módulo disparador de alertas al usuario, a los seguidores del file y al pasajero.
+- [ ] Módulo disparador de alertas al usuario, a los seguidores del file y al pasajero, para vencimientos de pasaportes, de señas al proveedor, de salida, etc.
 - [ ] Segmentador de público -por etiquetas-
 - [x] Genera **RM** con datos para el backoffice y automatizar la facturación.
 - [x] Vinculación `Many2one` a un contacto en `res.partner`.
@@ -80,11 +82,9 @@ Retail Mayorista y Minorista
 - [ ] Agrear el título que indique al usuario que debe pegar todo el TST completo, las dos o tres páginas para que no se rompa.  Tooltip.
 - [x] Parsear TST es otro título.   Ver tst guardados.
 - [x] Error al traer el Q1 cuando cambia de renglón.
-
-![Imagen del capturador del tst](/Static/tst2.jpg "Capturador")
-
+- [ ] Lógica separada para cabotaje e internacional.
+- [ ] Lógica separada para emisiones en USD o ARS.
 - [x] Recorta los Datos con REGEX **(OK)**
-
 - [x] Cía. 
 - [x] Tarifa ARS
 - [x] Tarifa USD
@@ -95,8 +95,6 @@ Retail Mayorista y Minorista
 - [x] Fechas
 - [x] Franqujicia de equipaje
 - [x] Resaltar retención AFIP
-
-- ![Tst recortado y datos persistidos ](/Static/tst3.jpg "scrap de datos del tst de amadeus")
 
 ## Pegarle en el renglon del presupuesto el contenido del TST desmenuzado.
 
@@ -127,11 +125,7 @@ If you are doing/testing this on the Odoo Shell, then make sure to run the follo
 
 ---
 
-![Imagen TST Copiado](/Static/tst1.jpg "TST Copiado")
-
 - [ ] Arma cotización con varios 'TST', varias veces se corre el proceso, varios botones dependiendo si la cotización es en ARS o en USD.
-
-![Agregar botones que faltan COT USD / COT ARS / AGREGAR SEGURO XX / ETC](/Static/tst5.jpg "Botones para cotizaciones distintas")
 
 - [ ] Cambia a dolar Turista.  Agregar 2 dolares distintos.
 - [ ] Quedan todos los parámetros guardados por defecto con un trazado de usuario / hora.
@@ -139,8 +133,6 @@ If you are doing/testing this on the Odoo Shell, then make sure to run the follo
 - [ ] Armar Diccionario con grupos de Ciudades / Aeropuertos segmentados por región, a subir vía archivo `.csv`
 - [ ] Markups automatizados para las regiones.
 - [ ] Securización CRUD de este módulo para administradores solamente.
-
-![Securización de los módulos por grupos](/Static/tst4.jpg "Ventana permisos de módulos")
 
 ---
 
@@ -172,9 +164,6 @@ If you are doing/testing this on the Odoo Shell, then make sure to run the follo
 
 > Plantilla Aéreo **Internacional** Migrante.
 > 
-
-![Aletas y recomendaciones por defecto, pegar variables puntuales como tipo de cambio](/Static/presupuesto1.jpg "Plantilla presupuesto")
-
 
 ---
 
