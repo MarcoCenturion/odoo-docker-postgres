@@ -2,7 +2,7 @@
 
 # odoo-docker-postgres
 
-Crearemos un repositorio donde guardar la configuracion de un dockerfile y docker-compose para levantar contenedores de docker que corran 
+Crearemos un repositorio donde guardar la configuracion de un dockerfile y docker-compose para levantar contenedores de docker que corran de manera local para usarlos de entorno de desarrollo. 
 
 - odoo 
 - postgres
@@ -20,14 +20,15 @@ El objetivo es levantar varias instancias en la nube con docker, una en **produc
 - [ ] Correr `systemctl start docker`
 - [ ] Primer paso, crear el archivo `docker-compose.yml`
 - [ ] Guardar el `odoo.conf` en la ruta del volumen del contenedor
-- [ ] Guardar el archivo `nginx.conf` iden
-- [ ] Persistir los datos en los volúmenes
+- [ ] Guardar el archivo `nginx.conf` idem
+- [x] Persistir los datos en los volúmenes
+- [x] Recovery disaster de bases en producción
 
 > Crear un usuario `odoo` con permisos para postgres en el container  **odoo-db-data**
 
 |Accion|Comando|
 |--|--:|
-|**Arrancar los contenedores** | Correr esto en el mismo directorio donde está el archivo docker-compose.yml docker-compose up -d (para que corra en segundo plano)|
+|**Arrancar los contenedores** | Correr esto en el mismo directorio donde está el archivo docker-compose.yml `docker-compose up -d` (para que corra en segundo plano)|
 | **Detener los contenedores** | `docker-compose down` |
 | **Restart** | `docker-compose restart` |
 | **Entrar a la linea de comandos del contenedor** | `docker exec -it u roo odoo-db-data /bin/bash` | 
@@ -41,38 +42,28 @@ El objetivo es levantar varias instancias en la nube con docker, una en **produc
 
 Retail Mayorista y Minorista
 
-- DatosPax -cambiar la lógica por pasajeros-
+- Passenger_data -Agrega a res.partner la lógica por pasajeros-
 - Copia TST
 - Presupuestador
 - Reporteador
 - Alertas por email y SMS
+- Lógica del file costos vs. ventas
+
 ---
 
-## Módulo DatosPax (40 hs. desarrollo / Realizadas 10)
+## Módulo Passenger_data (40 hs. desarrollo / Realizadas 10)
 
-- [x] Agrega Menú / Sub menú **(OK)**.
-
-![Menú datospax](/Static/datospax1.jpg "Menu DatosPax")
-
+- [x] Datos Adicionales al pasajero en res.partner **(OK)**.
+- [x] Agregar imágenes y verlas en la vista **(OK)**.
+- [ ] Mejorar vista datos*.
 - [x] ABM pasajeros. **(OK)**
-
-- ![ABM datospax](/Static/datospax2.jpg "Form datos pax")
-
 - [x] Captura datos del pasajero **Odoo2Amadeus** / **Amadeus2Odoo** 
-- ![copiar datospax para el PNR](/Static/datospax3.jpg "Datos pax al pnr")
-
 - Automatiza tareas repetitivas evita errores de tipeo.  reduce costos por **ADM'S**
 - [ ] Genera un Renglón para pegar en Amadeus con los campos para el PNR con los campos `NM, AP, TK, SRDOCS, OS, SR FQTV y RM{nrocliente}` (En desarrollo)
 - [ ] Ciclo for que enumera los pasajeros y pega ese valor en `/p{valor}`
 - [x] Alertas de **Vencimientos** de pasaporte o Visas **(OK)** como TIME LIMIT en el `Formulario` y en el `Calendario` 
 - [ ] Agregar vista calendario `Salidas` y `vencimiento de señas`
 - [ ] Módulo disparador de alertas al usuario, a los seguidores del file y al pasajero.
-
-![Vto Pasaporte y Visa USA](/Static/datospax4.jpg "Formulario de Carga")
-
-
-![Vista Calendario VTO Pass ](/Static/datospax5.jpg "Calendario Vencimientos")
-
 - [ ] Segmentador de público -por etiquetas-
 - [x] Genera **RM** con datos para el backoffice y automatizar la facturación.
 - [x] Vinculación `Many2one` a un contacto en `res.partner`.
