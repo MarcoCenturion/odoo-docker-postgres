@@ -15,7 +15,7 @@ El objetivo es levantar varias instancias en la nube con docker, una en **produc
 
 ---
 
-## Pasos en PC local
+# Pasos en PC local
 
 - [ ] Primer paso, crear carpetas para configuracion odoo y para los addons.
 - [ ] Segundo paso, crear el archivo `docker-compose.yml` 
@@ -45,12 +45,28 @@ Retail Mayorista y Minorista
 
 - Passenger_data -Agrega a res.partner la lógica por pasajeros-
 - Copia TST
-- Presupuestador - Crear plantillas de presupuestos
-- Reporteador
+- Presupuestador 
+- Pasar presupuesto a file
+  - Item por producto en el file. (wizzard con la lógica del producto)
+  - Vencimiento por producto / proveedor.  Campo fecha a ver en la vista calendario.
+  - Manejo de costos.
+- Crear plantillas de presupuestos que van a iniciar el flujo correcto.  ¿Etiquetas para esto?
+- Reporteador.  Esto se resuelve del lado del usuario.  Se crea un "tablero" propio con las vistas. 
 - Alertas por email y SMS (configuración de servicios de email)
 - Lógica del file costos vs. ventas
+- Calendario de salidas, vto de pasaporte, cumpleaños, etc.  En una vista calendario.
 
 ---
+## File.  Diseñar como armar el file.  (80 hs desarrollo / realizadas 0)
+
+Crear un notebook en la línea en que están los detalles del presupuesto / venta y agregar al final una etiqueta **Costos del File**.
+
+| Líneas del pedido | Productos opcionales | Otra Información | Firma del Cliente | *Costos del file*. |
+
+- Proveedor.
+- Costo.  Gastos.  
+- Vencimiento pagos.
+- Inicio de servicios.
 
 ## Módulo passenger_data (40 hs. desarrollo / Realizadas 16)
 
@@ -79,6 +95,9 @@ Retail Mayorista y Minorista
 ## Módulo CopiarTst (30 hs. desarrollo / realizadas 5)
 
 - [x] Copia el texto plano de un TST **(OK)** que están en el ejemplo: `/Static/tst.txt`
+- [x] Arma la ruta con los segmentos de vuelos.
+- [ ] Armar script en amadeus que haga todo.
+- [ ] Presupuestador en Pesos y Dolares.
 - [ ] Agrear el título que indique al usuario que debe pegar todo el TST completo, las dos o tres páginas para que no se rompa.  Tooltip.
 - [x] Parsear TST es otro título.   Ver tst guardados.
 - [x] Error al traer el Q1 cuando cambia de renglón.
@@ -86,15 +105,17 @@ Retail Mayorista y Minorista
 - [ ] Lógica separada para emisiones en USD o ARS.
 - [x] Recorta los Datos con REGEX **(OK)**
 - [x] Cía. 
-- [x] Tarifa ARS
-- [x] Tarifa USD
-- [x] LTD (fecha y hora del último momento para emitir el tkt)
-- [x] Tipo de cambio (validar contra el GDS)
-- [x] Origen
-- [x] Destinos
-- [x] Fechas
-- [x] Franqujicia de equipaje
-- [x] Resaltar retención AFIP
+- [x] Tarifa ARS.
+- [x] Tarifa USD.
+- [x] LTD (fecha y hora del último momento para emitir el tkt).
+- [x] Tipo de cambio (validar contra el GDS).
+- [x] Origen.
+- [x] Destinos.
+- [x] Fechas.
+- [x] Franqujicia de equipaje.
+- [x] Resaltar retención AFIP.
+- [ ] Notas de la tarifa.
+- [ ] Proyecto en TH Consultora con los gantt de tiempos de cada módulo.
 
 ## Pegarle en el renglon del presupuesto el contenido del TST desmenuzado.
 
@@ -157,13 +178,15 @@ If you are doing/testing this on the Odoo Shell, then make sure to run the follo
 
 ### Terrestre (40 hs / hechas 0)
 
-- Dividir presupuestos por tipos de viajes indexando categorías, para mejorar el ***Revenue Management*** haciendo reglas de MU puntuales y para poder mostrar estadísticas periódicas (no puede mejorarse lo que no puede medirse) y poder enfocarse en lo rentable.  
-- Ejemplo:
+Dividir presupuestos por tipos de viajes indexando categorías, para mejorar el ***Revenue Management*** haciendo reglas de MU puntuales y para poder mostrar estadísticas periódicas (no puede mejorarse lo que no puede medirse) y poder enfocarse en lo rentable.  Se establece una plantilla por tipo de viaje y esta acomoda la información a utilizar.
+
+Ejemplo:
 
 > Plantilla Aéreo **Internacional** Leisure.
 
 > Plantilla Aéreo **Internacional** Migrante.
-> 
+
+> Aéreo Cabotaje. 
 
 ---
 
@@ -260,3 +283,12 @@ Armar las vistar de productos, rentabilidad, etc.
 |17  |Categorias de Productos  
 |18  |Configurar Asientos  
 |19  |Crear Cuentas Analiticas 
+
+---
+
+## Gabriela Rivero
+
+- Buscar el modulo de PMS desarrollado en odoo 10.
+- Actualizarlo a odoo 14 CE.
+- Agregar lógicas faltantes con Belen.
+
