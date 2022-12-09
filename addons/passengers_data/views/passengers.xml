@@ -8,18 +8,17 @@
 		  <field name="category_id" position="after">
 			  <field name="dob" placeholder="Date of birdth"/>
 			  <field name="document" widget="char" placeholder="DNI, Cedula, etc." />
-			  <field name="passport" widget="char" placeholder="AA43234222" />
+			  <field name="passport" widget="char" placeholder="Passport Number Eg. AA43234222" />
 			  <field name="pass_tl" placeholder="Expiration passport date"/>
 			  <field name="visa_us_tl" placeholder="Expiration visa USA date"/>
-			  <field name="note" widget="char" placeholder="Notas sobre el pasajero, comidas habituales, preferencias, etc." />
 		 </field>
 		 <field name="country_id" position="after">
-			  <field name="ff1"/>
-			  <field name="ff2"/>
-			  <field name="note" widget="char" placeholder="Notas sobre el pasajero, comidas habituales, preferencias, etc." />
-            		  <field name="doc_image" widget="image" options='{"size": [200, 200]}' />
-            		  <field name="passanger_image" widget="image" options='{"size": [200, 200]}' />
-            		  <field name="visa_us_image" widget="image" options='{"size": [200,200]}' />
+			  <field name="ff1" placeholder="Frequent Flyer Eg. AA342222"/>
+			  <field name="ff2" placeholder="Frequent Flyer Eg. LH8484884"/>
+			  <field name="note" widget="char" placeholder="Passenger recomendation, Eg. Meals, seats, vaccinations, etc" />
+            		  <field name="doc_image" widget="image" options='{"size": [200, 200]}' help="Pax Document Image Stored" />
+            		  <field name="passanger_image" widget="image" options='{"size": [200, 200]}' help="Passport Image" />
+            		  <field name="visa_us_image" widget="image" options='{"size": [200,200]}' help="US Visa Image" />
 		 </field>
 	 </field>
  </record>

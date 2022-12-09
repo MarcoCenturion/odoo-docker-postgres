@@ -5,19 +5,19 @@
 		  <field name="model">sale.order</field>
 		  <field name="inherit_id" ref="sale.view_order_form"/>
 		  <field name="arch" type="xml">
-			  <xpath expr="//notebook" position="inside">
-				  <page string="File costs">
-					  <field name="supplier">
-					  <field name="supplier_file">
-					  <field name="currency">
-					  <field name="price">
-					  <field name="bills">
-					  <field name="description">
-					  <field name="settlement">
-					  <field name="state">
-				  </page>
-			  </xpath>
-		  </field>
-	 </record>
- </date>
+		  <xpath expr="//notebook" position="inside">
+			  <page string="File Costs">
+			  <field name="state"/>
+			  <field name="supplier" placeholder="Tour Supplier"/>
+			  <field name="supplier_file" placeholder="File Supplier Number"/>
+			  <field name="currency"/>
+			  <field name="price" placeholder="Total Ammount of services"/>
+			  <field name="bills" placeholder="Aditional costs of Tour Operator Supplier"/>
+			  <field name="description"placeholder="Short Services Description"/>
+			  <field name="settlement" placeholder="Settlement image max 1M"/>
+		  </page>
+		  </xpath>
+	  </field>
+ </record>
+ </data>
  </odoo>
