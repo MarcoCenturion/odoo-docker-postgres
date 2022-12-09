@@ -1,0 +1,23 @@
+<odoo>
+<data noupdate="0">
+  <record model="ir.ui.view" id="sale_order_view_inherit_cost">
+		  <field name="name">sale.order.inherit.cost</field>
+		  <field name="model">sale.order</field>
+		  <field name="inherit_id" ref="sale.view_order_form"/>
+		  <field name="arch" type="xml">
+			  <xpath expr="//notebook" position="inside">
+				  <page string="File costs">
+					  <field name="supplier">
+					  <field name="supplier_file">
+					  <field name="currency">
+					  <field name="price">
+					  <field name="bills">
+					  <field name="description">
+					  <field name="settlement">
+					  <field name="state">
+				  </page>
+			  </xpath>
+		  </field>
+	 </record>
+ </date>
+ </odoo>

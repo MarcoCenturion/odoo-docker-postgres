@@ -1,16 +1,19 @@
 <odoo>
   <data noupdate="0">
   <record id="view_res_partner_additional_data" model="ir.ui.view">
-	  <field name="model">res.partner.aditional.data</field>
+	  <field name="name">res.partner.aditional.data</field>
 	  <field name="model">res.partner</field>
 	  <field name="inherit_id" ref="base.view_partner_form"/>
 	  <field name="arch" type="xml">
 		  <field name="category_id" position="after">
-			  <field name="dob"/>
+			  <field name="dob" placeholder="Date of birdth"/>
 			  <field name="document" widget="char" placeholder="DNI, Cedula, etc." />
 			  <field name="passport" widget="char" placeholder="AA43234222" />
-			  <field name="pass_tl" />
-			  <field name="visa_us_tl"/>
+			  <field name="pass_tl" placeholder="Expiration passport date"/>
+			  <field name="visa_us_tl" placeholder="Expiration visa USA date"/>
+			  <field name="note" widget="char" placeholder="Notas sobre el pasajero, comidas habituales, preferencias, etc." />
+		 </field>
+		 <field name="country_id" position="after">
 			  <field name="ff1"/>
 			  <field name="ff2"/>
 			  <field name="note" widget="char" placeholder="Notas sobre el pasajero, comidas habituales, preferencias, etc." />
