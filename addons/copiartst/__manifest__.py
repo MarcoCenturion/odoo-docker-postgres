@@ -6,7 +6,7 @@
     Previous to this process, the user must cut and paste the content of the TST from Amadeus Selling Platform
     and then paste in this module.
     Then, the app will take the data and paste it into the sale.order.
-    """
+    """,
 
     'description': """ 
         This Module will take the variables of the clipboard and paste into the sales.form 
@@ -29,7 +29,7 @@
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/13.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Tarvel','Process Automation'
+    'category': 'Travel','Process Automation'
     'version': '1.0',
 
     # any module necessary for this one to work correctly
@@ -49,4 +49,4 @@
     'demo': [
        'demo/demo.xml',
     ],
-    }
+}
