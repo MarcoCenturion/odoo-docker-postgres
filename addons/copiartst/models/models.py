@@ -9,6 +9,7 @@ class Copiatst(models.Model):
 
     @api.depends('tst_amadeus') # Origen de la ruta
     def _orig(self):
+<<<<<<< HEAD
         if self.tst_amadeus:
             self.orig=re.findall('\n (\w{3})\n', self.tst_amadeus)[0]
 
@@ -16,6 +17,15 @@ class Copiatst(models.Model):
     def _route(self):
         if self.tst_amadeus:
             self.route=re.findall('\n \w{3}\v \w{3} \w{2}\n\w|\n([ |X]\w{3} ..)', self.tst_amadeus)
+=======
+	if self.tst_amadeus:
+	    self.orig=re.findall('\n (\w{3})\n', self.tst_amadeus)[0]
+
+    @api.depends('tst_amadeus') # Ruta sin parcear
+    def _route(self):
+	if self.tst_amadeus:
+	    self.route=re.findall('\n \w{3}\v \w{3} \w{2}\n\w|\n([ |X]\w{3} ..)', self.tst_amadeus)
+>>>>>>> f45bb8a42ff900769d721ff5acf2b2a2ddd85f1d
 
     @api.depends('tst_amadeus') # Tarifa en Pesos 
     def _fare_ars(self):
