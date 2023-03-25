@@ -1,13 +1,11 @@
 <odoo>
   <data>
-
     <!--      Vista Formulario     -->
     <record model="ir.ui.view" id="copiartst_form">
       <field name="name">copiartst_form</field>
       <field name="model">copia.tst</field>
       <field name="arch" type="xml">
         <form>
-
           <!--      Botones para pegar en Sale Order     -->
           <header>
             <button type="object" name="_copytst" string="Copiar TST" class="oe_highlight" />
@@ -30,7 +28,6 @@
         </form>
       </field>
     </record>
-
     <!--      Vista Listado     -->
   <record model="ir.ui.view" id="copiartst_list">
       <field name="name">copiartst_list</field>
@@ -51,7 +48,6 @@
          </tree>
       </field>
     </record>
-
     <!--      Vista Filtro     -->
     <record model="ir.ui.view" id="copiartst_filter">
       <field name="name">copiartst_filter</field>
@@ -62,20 +58,15 @@
         </search>
       </field>
     </record>
-
     <!-- actions opening views on models -->
-
     <record model="ir.actions.act_window" id="tstmaker_action_window">
       <field name="name">TST Maker</field>
       <field name="res_model">copia.tst</field>
       <field name="view_mode">tree,form</field>
     </record>
-
     <!-- Top menu item -->
-
     <menuitem name="Tst maker" id="tstmaker_menu_root"/>
     <!-- menu categories -->
-
     <menuitem name="Parsear TST" id="tstmaker_document" parent="tstmaker_menu_root" 
     action="tstmaker_action_window"/>
   </data>

@@ -16,18 +16,20 @@ class Copiatst(models.Model):
 	def _route(self):
 		if self.tst_amadeus:
 			self.route=re.findall('\n \w{3}\v \w{3} \w{2}\n\w|\n([ |X]\w{3} ..)', self.tst_amadeus)
-            tramo=[]
-            contador = len(route)
-            for renglon in route:
-                vuelo = renglon[5:12]
-                fecha = renglon[14:20]
-                orides = renglon[22:29]
-                horarios = renglon[34:44]
-                tramo.append(vuelo+fecha+orides+horarios)
-                contador = contador-1 
-            tramos="\n".join(tramo)
+'''
+    tramo=[]
+    contador = len(route)
+    for renglon in route:
+        vuelo = renglon[5:12]
+        fecha = renglon[14:20]
+        orides = renglon[22:29]
+        horarios = renglon[34:44]
+        tramo.append(vuelo+fecha+orides+horarios)
+        contador = contador-1 
+    tramos="\n".join(tramo)
+'''
 
-	@api.depends('tst_amadeus') # Tarifa en Pesos
+    @api.depends('tst_amadeus') # Tarifa en Pesos
 	def _fare_ars(self):
 		if self.tst_amadeus:
 			self.fare_ars=re.findall('\nARS(\D{0,3}\d{1,6}.\d{2})', self.tst_amadeus)[0]
