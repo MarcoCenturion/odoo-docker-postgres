@@ -15,18 +15,8 @@ class Copiatst(models.Model):
     @api.depends('tst_amadeus') # Ruta sin parcear
     def _route(self):
         if self.tst_amadeus:
-            self.route=re.findall('\n \w{3}\v \w{3} \w{2}\n\w|\n([ |X]\w{3} ..)', self.tst_amadeus)
-            tramo=[]
-            contador = len(route)
-            for renglon in route:
-                vuelo = renglon[5:12]
-                fecha = renglon[14:20]
-                orides = renglon[22:29]
-                horarios = renglon[34:44]
-                tramo.append(vuelo+fecha+orides+horarios)
-                contador = contador-1 
-            tramos="\n".join(tramo)
-
+            self.route = re.findall(r'^\s{2}\d{1}\s{2}\w{2}.{53}',tst_amadeus)
+    
     @api.depends('tst_amadeus') # Tarifa en Pesos 
     def _fare_ars(self):
         if self.tst_amadeus:
