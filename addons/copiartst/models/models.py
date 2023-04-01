@@ -16,7 +16,7 @@ class Copiatst(models.Model):
     def _route(self):
         if self.tst_amadeus:
             self.route = re.findall(r'^\s{2}\d{1}\s{2}\w{2}.{53}',tst_amadeus)
-
+    
     @api.depends('tst_amadeus') # Tarifa en Pesos 
     def _fare_ars(self):
         if self.tst_amadeus:
@@ -74,4 +74,3 @@ class Copiatst(models.Model):
     cia = fields.Char('Cía Aérea', compute='_cia', store=True)
     rate = fields.Char('Cambio Amadeus', compute='_rate', store=True) 
     line_air = fields.Many2many('sale.order','order_line', 'Agregar Vuelos')
-
