@@ -42,7 +42,7 @@
         'security/copiartst_security.xml',
         'views/views.xml',
         'views/templates.xml',
-        'views/view_line.xml',
+        #'views/view_line.xml',
         'report/export_tst.xml'
     ],
     # only loaded in demonstration mode
