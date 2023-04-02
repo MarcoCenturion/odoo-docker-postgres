@@ -15,7 +15,8 @@ class Copiatst(models.Model):
     @api.depends('tst_amadeus') # Ruta sin parcear
     def _route(self):
         if self.tst_amadeus:
-            self.route = re.findall(r'^\s{2}\d{1}\s{2}\w{2}.{53}',tst_amadeus)
+            #self.route = re.findall(r'^\s{2}\d{1}\s{2}\w{2}.{53}',tst_amadeus)
+            self.route=re.findall('\n \w{3}\v \w{3} \w{2}\n\w|\n([ |X]\w{3} ..)', self.tst_amadeus)
     
     @api.depends('tst_amadeus') # Tarifa en Pesos 
     def _fare_ars(self):
@@ -63,7 +64,7 @@ class Copiatst(models.Model):
 
     tst_amadeus = fields.Text('Copia del tst')
     orig = fields.Char('Origen', compute='_orig', store=True)
-    route = fields.Char('Destinos', compute='tramos', store=True)
+    route = fields.Char('Destinos', compute='_route', store=True)
     date = fields.Char('Fechas ida/vuelta', compute='_date', store=True)
     fare_ars = fields.Char('Tarifas ARS', compute='_fare_ars', store=True)
     ttl = fields.Char('Total ARS', compute='_ttl', store=True)
