@@ -64,7 +64,7 @@ class Copiatst(models.Model):
 
     tst_amadeus = fields.Text('Copia del tst')
     orig = fields.Char('Origen', compute='_orig', store=True)
-    route = fields.Char('Destinos', compute='tramos', store=True)
+    route = fields.Char('Destinos', compute='_route', store=True)
     date = fields.Char('Fechas ida/vuelta', compute='_date', store=True)
     fare_ars = fields.Char('Tarifas ARS', compute='_fare_ars', store=True)
     ttl = fields.Char('Total ARS', compute='_ttl', store=True)
