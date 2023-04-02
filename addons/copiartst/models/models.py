@@ -15,13 +15,13 @@ class Copiatst(models.Model):
     @api.depends('tst_amadeus') # Ruta sin parcear
     def _route(self):
         if self.tst_amadeus:
-            #self.route = re.findall(r'^\s{2}\d{1}\s{2}\w{2}.{53}',tst_amadeus)
-            self.route=re.findall('\n \w{3}\v \w{3} \w{2}\n\w|\n([ |X]\w{3} ..)', self.tst_amadeus)
-    
+            self.route = re.findall(r'^\s{2}\d{1}\s{2}\w{2}.{53}',tst_amadeus, flags=re.M)
+
     @api.depends('tst_amadeus') # Tarifa en Pesos 
     def _fare_ars(self):
         if self.tst_amadeus:
             self.fare_ars=re.findall('\nARS(\D{0,3}\d{1,6}.\d{2})', self.tst_amadeus)[0]
+
     @api.depends('tst_amadeus') # Total tarifa + tax en ARS
     def _ttl(self):
         if self.tst_amadeus:
