@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    image: odoo:16.0
+    image: odoo:17.0
     container_name: odoo_produccion
     restart: always
     depends_on:
