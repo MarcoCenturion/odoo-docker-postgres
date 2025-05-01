@@ -1,0 +1,250 @@
+¿y si armamos todo el módulo nuevamente?
+necesito armar un modulo para odoo 17 con scaffold
+
+en un archivo config.py quiero poner estos diccionarios
+
+aeropuertos = {
+    "ADD": "Addis Ababa, Ethiopia",
+    "ADZ": "San Andrés",
+    "AEP": "Aeroparque, Buenos Aires",
+    "AGP": "Malaga",
+    "AKL": "Auckland, New Zeland",
+    "ALC": "Alicante",
+    "AMS": "Amsterdam, Países Bajos",
+    "ASU": "Asunción, Paraguay",
+    "ATH": "Atenas, Grecia",
+    "ATL": "Atlanta, USA",
+    "AUA": "Aruba",
+    "AVV": "Melbourne, Australia",
+    "BHI": "Bahia Blanca",
+    "BCN": "Barcelona",
+    "BOG": "Bogotá",
+    "BRC": "San Carlos de Bariloche",
+    "BUE": "Buenos Aires",
+    "CDG": "Charles De Gaulle, París",
+    "CGH": "Congonhas, Sao Paulo",
+    "CHC": "Christchurch, New Zeland",
+    "CJC": "Calama, Chile",
+    "COR": "Córdoba",
+    "CPC": "San Martín de los Andes",
+    "CTG": "Cartagena de Indias",
+    "CUN": "Cancún",
+    "CUR": "Curazao, Antillas Holandesas",
+    "CUZ": "Cuzco",
+    "DXB": "Dubai",
+    "EWR": "Newark New York",
+    "EZE": "Ezeiza, Buenos Aires",
+    "FCO": "Fiumicino, Roma",
+    "FLN": "Florianópolis",
+    "FRA": "Frankfurt",
+    "FTE": "El Calafate",
+    "GIG": "El Galeao, Rìo de Janeiro",
+    "GLA": "Glasgow, Escocia",
+    "GRU": "Guarulhos, Sao Paulo",
+    "GUA": "Ciudad de Guatemala, Guatemala",
+    "GYE": "Guayaquil, Ecuador",
+    "HAV": "La Habana, Cuba",
+    "HOU": "Houston, Texas",
+    "IAH": "Houston, Texas, USA",
+    "IGR": "Puerto Iguazú, Argentina",
+    "IGU": "Foz do Iguazu, BR",
+    "IQQ": "Iquique, Chile",
+    "IST": "Istambul, Turkey",
+    "JFK": "John F. Kennedy, New York",
+    "JUJ": "Jujuy",
+    "LAP": "La Paz, Mexico",
+    "LAS": "Las Vegas",
+    "LAX": "Los Angeles, California",
+    "LCA": "Larnaca, Cyprus",
+    "LGA": "La Guardia New York",
+    "LGW": "London",
+    "LHR": "Heathrow, London",
+    "LIM": "Lima, Perú",
+    "LIS": "Lisboa",
+    "MAD": "Madrid",
+    "MCO": "Orlando, Florida, US",
+    "MDZ": "Mendoza",
+    "MDQ": "Mar del Plata",
+    "MEC": "Manta, Ecuador",
+    "MEL": "Melbourne, Australia",
+    "MEX": "México DF",
+    "MIA": "Miami, USA",
+    "MIL": "Milano",
+    "MUC": "Munich",
+    "MXP": "Malpensa, Milano",
+    "NAP": "Napoles, Italy",
+    "NLU": "Felipe Angeles, Mexico DF",
+    "NWR": "Newark Liberty Intl, Nyc USA",
+    "OPO": "Oporto, Portugal",
+    "ORD": "Chicago, USA",
+    "ORY": "Orly, París",
+    "PHL": "Philadelphia, USA",
+    "POA": "Porto Allegre",
+    "PMI": "Palma de Mallorca, Islas Baleares, España",
+    "PSS": "Posadas, Misiones",
+    "PTY": "Panamá",
+    "ROS": "Rosario",
+    "PUJ": "Punta Cana",
+    "RDD": "Readding, California",
+    "RES": "Resistencia, Chaco",
+    "SAL": "San Salvador, El Salvador",
+    "SCL": "Santiago de Chile",
+    "SDQ": "Santo Domingo, Repùblica Dominicana",
+    "SDU": "Santos Dumont Rio de Janeiro",
+    "SFO": "San Francisco, California",
+    "SJD": "Los Cabos, Mexico",
+    "SJO": "San José, Costa Rica",
+    "SLA": "Salta",
+    "SMR": "Santa Marta, Colombia",
+    "SPU": "Split, Croacia",
+    "SSA": "Salvador, Bahia",
+    "STR": "Stutgart",
+    "SVQ": "Sevilla",
+    "SYD": "Sydney",
+    "TIJ": "Tijuana, Mexico",
+    "TLV": "Tel Aviv, Israel",
+    "TQO": "Tulum, México",
+    "UIO": "Quito, Ecuador",
+    "USH": "Ushuaia",
+    "VLC": "Valencia, España",
+    "VVI": "Santa Cruz de la Sierra, Bolivia",
+    "XOC": "Atocha Rail ST, Madrid",
+    "YTO": "Toronto, Canadá",
+    "YYZ": "Toronto, Canadá",
+    "YJB": "Sants Rail Station, Barcelona"
+}
+
+
+lineas = {
+    "AC": "Air Canada",
+    "AR": "Aerolíneas Argentinas",
+    "AV": "AVIANCA",
+    "AZ": "Ita",
+    "CM": "Copa Airlines",
+    "LA": "Latam",
+    "KL": "KLM, Royal Dutch Airlines",
+    "AA": "American Airlines",
+    "DL": "Delta Airlines",
+    "UX": "Air Europa",
+    "IB": "Iberia",
+    "AF": "Air France",
+    "UA": "United Airlines",
+    "G3": "Gol Lihnas Aereas",
+    "WJ": "Jet Smart",
+    "OB": "Boliviana de Aviación",
+    "H2": "Sky Airlines",
+    "ET": "Ethiopian Airlines",
+    "JA": "Jetsmart Spa"
+}
+
+# 0P|20|30|32|2B|PC|1P|2P|3P
+franquicia = {
+    "0P": "Solo 1 carryon de 10 kg. en cabina, sin equipaje en bodega",
+    "1P": "Carryon de 10 kg. en cabina + una maleta despachada en bodega de 23kg",
+    "2P": "Carryon de 10 kg. en cabina + dos maletas despachadas en bodega de 23kg c/u",
+    "30": "Carryon de 10 kg. en cabina + una maleta despachada en bodega de 30kg",
+    "3P": "Carryon de 10 kg. en cabina + tres maletas despachadas en bodega de 23kg c/u"
+}
+
+devoluciones = {
+    "NON-REF":"No permite devoluciones ni cambios",
+    "NON-END":"No permite devoluciones ni cambios",
+    "ENDOS":"No permite devoluciones ni cambios",
+    "NONREF":"No permite devoluciones ni cambios",
+    "NONEND":"No permite devoluciones ni cambios"
+}
+
+agregar a sale.order boton que llame a un wizard, en un cuadro de texto capturar apturar el texto plano con este formato que llamamos, lo quiero guardar en una variable TST
+
+tst = '''
+F01 P1
+SELECTED RECOMMENDATION SUCCESSFULLY BOOKED
+LAST TKT DTE 10AUG24 - SEE ADV PURCHASE
+------------------------------------------------------------
+     AL FLGT  BK T DATE  TIME  FARE BASIS      NVB  NVA   BG
+ COR
+ RIO AR  1272 N  N 27SEP 1255  NLOW9AEB        27SEP27SEP 0P
+ COR AR  1273 E  E 07OCT 1115  ELOW9AEB        07OCT07OCT 0P
+
+USD   291.00      27SEP24COR AR RIO138.00AR
+ARS278051.00      COR153.00NUC291.00END ROE1.00
+ARS 19463.60AR    XT ARS 83415.30Q1 ARS 9555.00QO ARS
+ARS 83415.30O5    1337.70S7 ARS 7644.00TQ ARS 54463.50XR ARS
+ARS166099.40XT    9683.90BR
+ARS547029.30
+RATE USED 1USD=955.50ARS
+FARE FAMILIES:    (ENTER FQFn FOR DETAILS, FXY FOR UPSELL)
+FARE FAMILY:FC1:1:EB
+FARE FAMILY:FC2:2:EB
+>                                                 PAGE  1/ 2
+>
+m
+NO BAG INCLUDED FOR AT LEAST ONE FLIGHT
+TICKET STOCK RESTRICTION
+BG CXR: AR/AR
+PRICED WITH VALIDATING CARRIER AR - REPRICE IF DIFFERENT VC
+NON-REFUNDABLE
+NONEND/REF/PNTY APPL
+>                                                 PAGE  2/ 2
+>
+rt
+RP/CORG121MP/
+  1  AR1272 N 27SEP 5 CORGIG DK1  1255 1555  27SEP  E  0 738 S
+     010 G3 3013
+     908 3
+     SEE RTSVC
+  2  AR1273 E 07OCT 1 GIGCOR DK1  1115 1445  07OCT  E  0 738 S
+     010 G3 3012
+     908 3
+     SEE RTSVC
+'''
+
+un boton del wizard ordena procesar los datos
+vamos a convertir en este contenido para pegar en sale.order.line 
+
+yo utilicé el modulo re de python, pero puedo usar otra opcion mejor
+
+# Los tramos los tomamos del frente del PNR y los recortamos para obtener solo la info relevante
+tramo=[]
+clases=[]
+fechas=[]
+contador = len(route)
+
+for renglon in route:
+    vuelo = renglon[5:12]
+    clase = renglon[12:13]
+    fecha = renglon[14:20]
+    horarios = renglon[34:44]
+    ori = renglon[22:25]
+    des = renglon[25:28]
+    tramo.append(vuelo+fecha+horarios+aeropuertos.get(ori) + " / " + aeropuertos.get(des))
+    fechas.append(fecha)
+    clases.append(clase)
+    contador = contador-1
+
+
+# Juntamos toda la info de los tramos
+tramos="\n".join(tramo)
+clases="".join(clases)
+
+# Agregamos el Fee al total del PNR
+total=float(ttl)+float(fee)
+
+desmenuzamos el contenido de tst en las partes que vamos a usar para pegar en dos sale.order.line 
+
+una nota llevara este contenido
+
+Cotización Internacional iniciando vuelos en Argentina \
+- NO ES RESERVA\n* Compañia Emisora: {str(lineas.get(cia))}\n* Origen: {str(aeropuertos.get(orig))}\n\n* Despliegue de vuelos en horarios \
+ locales\n{str(tramos)}\n\n* Ultimo día para emitir: {str(ltd)} Abonando en Pesos solamente importe a recuperar AFIP ARS{str(int(float(retenc)))} \n* Cambios y Devoluciones: {str(devoluciones.get(ref))} Total con impuestos abonando en billetes dólares estadounidenses CARA GRANDE\n en perfecto estado *USD{str(ventausd+(int(fee/blue)))}* \
+ Ahorras USD{str(int(ventausd+(int(fee/blue))-(int(total)/blue)))}
+
+ y en producto 
+ Descripción "Tkt aéreo {str(lineas.get(cia))} "
+ price_unit  {str(int(total))}
+
+Posibilidad de pegar varios tst y formar pares de renglones
+
+persistir los datos para llevar estadísticas en el modulo CRM de tramos, cias aéreas, etc.
+
+utilizamos lo que ya venimos haciendo o hacemos un módulo desde cero?

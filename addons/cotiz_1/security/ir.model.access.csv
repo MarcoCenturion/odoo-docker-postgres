@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cotizador_amadeus_cotizador_amadeus,cotizador_amadeus.cotizador_amadeus,model_cotizador_amadeus_cotizador_amadeus,base.group_user,1,1,1,1

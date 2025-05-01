@@ -1,0 +1,25 @@
+<odoo>
+    <record id="view_tst_wizard_form" model="ir.ui.view">
+        <field name="name">tst.wizard.form</field>
+        <field name="model">tst.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Pegar TST">
+                <group>
+                    <field name="tst_content"/>
+                </group>
+                <footer>
+                    <button string="Pegar" type="object" name="pegar_tst" class="oe_highlight"/>
+                    <button string="Cancelar" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="tst_wizard_action" model="ir.actions.act_window">
+        <field name="name">Pegar TST</field>
+        <field name="res_model">tst.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>
+
